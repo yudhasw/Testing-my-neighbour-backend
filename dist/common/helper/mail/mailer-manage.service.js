@@ -25,7 +25,7 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
                 to: data.email,
                 subject: 'Verifikasi Registrasi Kepala Keluarga - ' +
                     (data.propertyName || 'Property Management'),
-                template: 'head-household-verification',
+                template: 'emailVerification',
                 context: {
                     fullName: data.fullName,
                     verificationCode: data.verificationCode,
@@ -34,11 +34,11 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
                     year: new Date().getFullYear(),
                 },
             });
-            this.logger.log(`Head of household verification email sent to ${data.email}`);
+            this.logger.log(`Email verifikasi kepala rumah tangga dikirim ke ${data.email}`);
             return true;
         }
         catch (error) {
-            this.logger.error(`Failed to send head of household verification email: ${error.message}`);
+            this.logger.error(`Gagal mengirim email verifikasi kepala rumah tangga: ${error.message}`);
             return false;
         }
     }
@@ -47,7 +47,7 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
             await this.mailService.sendMail({
                 to: data.adminEmail,
                 subject: `Review Dokumen - ${data.applicantName}`,
-                template: 'admin-document-review',
+                template: 'reviewDocument',
                 context: {
                     applicantName: data.applicantName,
                     applicantEmail: data.applicantEmail,
@@ -57,11 +57,11 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
                     year: new Date().getFullYear(),
                 },
             });
-            this.logger.log(`Document verification request sent to admin ${data.adminEmail}`);
+            this.logger.log(`Permintaan verifikasi dokumen dikirim ke admin${data.adminEmail}`);
             return true;
         }
         catch (error) {
-            this.logger.error(`Failed to send document verification request: ${error.message}`);
+            this.logger.error(`Gagal mengirim permintaan verifikasi dokumen: ${error.message}`);
             return false;
         }
     }
@@ -70,7 +70,7 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
             await this.mailService.sendMail({
                 to: data.email,
                 subject: 'Selamat Datang! Registrasi Berhasil',
-                template: 'head-household-welcome',
+                template: 'emailWelcome',
                 context: {
                     fullName: data.fullName,
                     uniqueCode: data.uniqueCode,
@@ -80,11 +80,11 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
                     year: new Date().getFullYear(),
                 },
             });
-            this.logger.log(`Head of household welcome email sent to ${data.email}`);
+            this.logger.log(`Email selamat datang kepala rumah tangga telah dikirim ke ${data.email}`);
             return true;
         }
         catch (error) {
-            this.logger.error(`Failed to send head of household welcome email: ${error.message}`);
+            this.logger.error(`Gagal mengirim email selamat datang kepada kepala rumah tangga: ${error.message}`);
             return false;
         }
     }
@@ -93,7 +93,7 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
             await this.mailService.sendMail({
                 to: data.email,
                 subject: 'Verifikasi Registrasi Anggota Keluarga',
-                template: 'family-member-verification',
+                template: 'emailVerification',
                 context: {
                     fullName: data.fullName,
                     verificationCode: data.verificationCode,
@@ -102,11 +102,11 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
                     year: new Date().getFullYear(),
                 },
             });
-            this.logger.log(`Family member verification email sent to ${data.email}`);
+            this.logger.log(`Email verifikasi anggota keluarga dikirim ke ${data.email}`);
             return true;
         }
         catch (error) {
-            this.logger.error(`Failed to send family member verification email: ${error.message}`);
+            this.logger.error(`Gagal mengirim email verifikasi anggota keluarga: ${error.message}`);
             return false;
         }
     }
@@ -138,7 +138,7 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
             await this.mailService.sendMail({
                 to: data.email,
                 subject: 'Selamat Datang! Registrasi Anggota Keluarga Berhasil',
-                template: 'family-member-welcome',
+                template: 'emailWelcome',
                 context: {
                     fullName: data.fullName,
                     uniqueCode: data.uniqueCode,
@@ -205,7 +205,7 @@ let MailerManageService = MailerManageService_1 = class MailerManageService {
             await this.mailService.sendMail({
                 to: familyMemberEmail,
                 subject: 'Registrasi Ditolak',
-                template: 'family-member-rejection',
+                template: 'rejectApproval',
                 context: {
                     familyMemberName,
                     headOfHouseholdName,

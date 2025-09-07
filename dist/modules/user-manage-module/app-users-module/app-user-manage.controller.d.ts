@@ -22,18 +22,7 @@ export declare class AppUserManageController {
         role: import("src/common/database/generated/prisma").$Enums.UserRole;
         gender: import("src/common/database/generated/prisma").$Enums.Gender | null;
     }>;
-    findAll(): Promise<{
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
-        fullName: string;
-        firstName: string;
-        lastName: string;
-        username: string;
-        primaryEmail: string;
-        secondaryEmail: string | null;
-        role: import("src/common/database/generated/prisma").$Enums.UserRole;
-        gender: import("src/common/database/generated/prisma").$Enums.Gender | null;
+    findAll(): Promise<({
         Resident: {
             emergencyContactName: string | null;
             emergencyContactNumber: string | null;
@@ -52,7 +41,25 @@ export declare class AppUserManageController {
             ForumPosts: number;
             ForumComments: number;
         };
-    }[]>;
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        fullName: string;
+        firstName: string;
+        lastName: string;
+        username: string;
+        dateOfBirth: Date | null;
+        contactNumber: string | null;
+        primaryEmail: string;
+        secondaryEmail: string | null;
+        password: string;
+        sessionToken: string | null;
+        emailVerificationToken: string | null;
+        passwordResetToken: string | null;
+        role: import("src/common/database/generated/prisma").$Enums.UserRole;
+        gender: import("src/common/database/generated/prisma").$Enums.Gender | null;
+    })[]>;
     findOne(id: string): Promise<{
         Resident: {
             emergencyContactName: string | null;

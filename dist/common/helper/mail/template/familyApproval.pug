@@ -1,0 +1,151 @@
+doctype html
+html(lang="id")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Persetujuan Diperlukan - Anggota Keluarga Baru
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #374151; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 20px 0; }
+      .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); }
+      .header { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 40px 30px; text-align: center; position: relative; overflow: hidden; }
+      .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: notify 3s ease-in-out infinite; }
+      @keyframes notify { 0%, 100% { transform: scale(1); opacity: 0.4; } 50% { transform: scale(1.3); opacity: 0.7; } }
+      .logo { width: 70px; height: 70px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; position: relative; z-index: 1; backdrop-filter: blur(10px); animation: bell 1s ease-in-out infinite; }
+      @keyframes bell { 0%, 50%, 100% { transform: rotate(0deg); } 10%, 30% { transform: rotate(-10deg); } 20%, 40% { transform: rotate(10deg); } }
+      .header h1 { color: #ffffff; font-size: 26px; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 1; }
+      .header p { color: rgba(255, 255, 255, 0.9); font-size: 16px; position: relative; z-index: 1; font-weight: 500; }
+      .content { padding: 40px 30px; }
+      .greeting { font-size: 20px; font-weight: 600; color: #1f2937; margin-bottom: 16px; }
+      .message { font-size: 16px; color: #6b7280; margin-bottom: 30px; line-height: 1.7; }
+      .notification-card { background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%); border: 1px solid #f97316; border-radius: 16px; padding: 30px; margin: 30px 0; position: relative; overflow: hidden; }
+      .notification-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #f97316, #ea580c, #dc2626); }
+      .notification-title { font-size: 18px; font-weight: 600; color: #1f2937; margin-bottom: 20px; display: flex; align-items: center; }
+      .notification-icon { margin-right: 12px; font-size: 20px; color: #f97316; }
+      .applicant-info { background: white; border-radius: 12px; padding: 24px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+      .applicant-header { display: flex; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid #f3f4f6; }
+      .applicant-avatar { width: 50px; height: 50px; background: linear-gradient(135deg, #f97316, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 600; margin-right: 16px; }
+      .applicant-details h4 { font-size: 18px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
+      .applicant-details p { font-size: 14px; color: #6b7280; }
+      .info-grid { display: grid; gap: 12px; }
+      .info-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f3f4f6; }
+      .info-item:last-child { border-bottom: none; }
+      .info-label { font-weight: 500; color: #6b7280; font-size: 14px; }
+      .info-value { font-weight: 600; color: #1f2937; font-size: 14px; }
+      .unique-code { background: #1f2937; color: white; font-family: 'Monaco', 'Consolas', monospace; padding: 4px 8px; border-radius: 6px; font-size: 12px; letter-spacing: 1px; }
+      .action-section { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 16px; padding: 30px; text-align: center; margin: 30px 0; }
+      .action-title { font-size: 20px; font-weight: 600; color: #1f2937; margin-bottom: 12px; }
+      .action-description { font-size: 16px; color: #6b7280; margin-bottom: 30px; line-height: 1.6; }
+      .action-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+      .btn { display: inline-block; text-decoration: none; padding: 14px 28px; border-radius: 12px; font-weight: 600; font-size: 16px; transition: all 0.3s ease; text-align: center; min-width: 140px; }
+      .btn-approve { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
+      .btn-approve:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); }
+      .btn-reject { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); }
+      .btn-reject:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4); }
+      .btn-review { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3); }
+      .btn-review:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4); }
+      .urgency-notice { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid #f59e0b; border-radius: 12px; padding: 20px; margin: 30px 0; display: flex; align-items: flex-start; }
+      .urgency-icon { width: 24px; height: 24px; background: #f59e0b; border-radius: 50%; margin-right: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: bold; }
+      .urgency-content { flex: 1; }
+      .urgency-title { font-size: 14px; font-weight: 600; color: #92400e; margin-bottom: 4px; }
+      .urgency-text { font-size: 14px; color: #92400e; line-height: 1.5; }
+      .instructions { background: #f9fafb; border-left: 4px solid #6b7280; padding: 20px; margin: 30px 0; border-radius: 0 12px 12px 0; }
+      .instructions-title { font-size: 16px; font-weight: 600; color: #1f2937; margin-bottom: 12px; }
+      .instructions-list { list-style: none; padding: 0; }
+      .instructions-item { color: #4b5563; font-size: 14px; margin-bottom: 8px; padding-left: 20px; position: relative; }
+      .instructions-item::before { content: '→'; position: absolute; left: 0; top: 0; color: #6b7280; font-weight: bold; }
+      .footer { background: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb; }
+      .footer-text { font-size: 14px; color: #6b7280; margin-bottom: 16px; }
+      .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+      .footer-link { color: #f97316; text-decoration: none; font-size: 14px; font-weight: 500; }
+      .footer-link:hover { text-decoration: underline; }
+      .copyright { font-size: 12px; color: #9ca3af; }
+      @media (max-width: 600px) { .email-container { margin: 0 10px; border-radius: 16px; } .content, .header, .footer { padding: 20px; } .action-buttons { flex-direction: column; align-items: center; } .btn { width: 100%; max-width: 280px; } .applicant-header { flex-direction: column; text-align: center; } .applicant-avatar { margin: 0 0 12px 0; } .footer-links { flex-direction: column; gap: 12px; } }
+    
+  body
+    .email-container
+      .header
+        .logo 🔔
+        h1 Persetujuan Diperlukan
+        p Anggota Keluarga Baru
+      
+      .content
+        .greeting Kepada Yth. #{headOfHouseholdName},
+        .message
+          p Ada permintaan registrasi anggota keluarga baru yang memerlukan persetujuan Anda sebagai kepala keluarga. 
+            | Mohon tinjau informasi berikut dan berikan keputusan Anda.
+        
+        .notification-card
+          .notification-title
+            span.notification-icon 👥
+            | Informasi Pendaftar
+          
+          .applicant-info
+            .applicant-header
+              .applicant-avatar
+                | #{familyMemberName.charAt(0).toUpperCase()}
+              .applicant-details
+                h4 #{familyMemberName}
+                p Calon Anggota Keluarga
+            
+            .info-grid
+              .info-item
+                span.info-label Nama Lengkap
+                span.info-value #{familyMemberName}
+              .info-item
+                span.info-label Email
+                span.info-value #{familyMemberEmail}
+              .info-item
+                span.info-label Kode Referensi
+                span.unique-code #{uniqueCode}
+              .info-item
+                span.info-label Status Pendaftaran
+                span.info-value(style="color: #f59e0b; font-weight: 700;") ⏳ Menunggu Persetujuan
+        
+        .urgency-notice
+          .urgency-icon !
+          .urgency-content
+            .urgency-title Perhatian Penting
+            .urgency-text Permintaan ini akan kedaluwarsa dalam 7 hari. Mohon segera berikan keputusan 
+              | untuk melanjutkan atau menolak registrasi anggota keluarga ini.
+        
+        .action-section
+          h3.action-title 🤔 Apa yang harus dilakukan?
+          p.action-description Sebagai kepala keluarga, Anda memiliki wewenang penuh untuk menyetujui atau menolak 
+            | registrasi anggota keluarga baru ini. Silakan klik tombol di bawah untuk memberikan keputusan.
+          
+          .action-buttons
+            a.btn.btn-approve(href=actionUrl + '/approve') ✓ Setujui
+            a.btn.btn-review(href=actionUrl + '/review') 👁️ Tinjau Detail
+            a.btn.btn-reject(href=actionUrl + '/reject') ✗ Tolak
+        
+        .instructions
+          .instructions-title 📋 Panduan Tindakan:
+          ul.instructions-list
+            li.instructions-item
+              strong Setujui:
+              |  Jika Anda mengenal dan mengizinkan orang ini menjadi anggota keluarga
+            li.instructions-item
+              strong Tinjau Detail:
+              |  Untuk melihat informasi lengkap sebelum memutuskan
+            li.instructions-item
+              strong Tolak:
+              |  Jika Anda tidak mengenal atau tidak mengizinkan registrasi ini
+            li.instructions-item
+              strong Hubungi Support:
+              |  Jika ada pertanyaan atau kendala teknis
+        
+        .message
+          p Jika Anda tidak melakukan tindakan apa pun, permintaan ini akan otomatis ditolak setelah 7 hari 
+            | untuk menjaga keamanan akun keluarga Anda.
+      
+      .footer
+        .footer-text Email ini dikirim secara otomatis dari sistem Property Management. 
+          | Mohon jangan membalas email ini.
+        .footer-links
+          a.footer-link(href="#") Dashboard
+          a.footer-link(href="#") Bantuan
+          a.footer-link(href="#") Support 24/7
+          a.footer-link(href="#") Kontak Admin
+        .copyright © #{year} Property Management System. All rights reserved.

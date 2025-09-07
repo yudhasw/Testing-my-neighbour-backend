@@ -1,0 +1,202 @@
+doctype html
+html(lang="id")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Review Dokumen - #{applicantName}
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #374151; background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); padding: 20px 0; }
+      .email-container { max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); }
+      .header { background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); padding: 40px 30px; text-align: center; position: relative; overflow: hidden; }
+      .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: scan 4s linear infinite; }
+      @keyframes scan { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+      .logo { width: 70px; height: 70px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; position: relative; z-index: 1; backdrop-filter: blur(10px); }
+      .header h1 { color: #ffffff; font-size: 28px; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 1; }
+      .header p { color: rgba(255, 255, 255, 0.9); font-size: 16px; position: relative; z-index: 1; font-weight: 500; }
+      .content { padding: 40px 30px; }
+      .admin-greeting { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-left: 4px solid #3b82f6; padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 30px; }
+      .admin-greeting h2 { color: #1e40af; font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+      .admin-greeting p { color: #1e3a8a; font-size: 14px; }
+      .priority-badge { display: inline-block; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; animation: pulse-priority 2s ease-in-out infinite; }
+      @keyframes pulse-priority { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+      .document-card { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; margin: 30px 0; position: relative; overflow: hidden; }
+      .document-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #1e40af, #1e3a8a); }
+      .document-header { display: flex; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid #e2e8f0; }
+      .document-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 16px; }
+      .document-info h3 { font-size: 20px; font-weight: 600; color: #1f2937; margin-bottom: 4px; }
+      .document-info p { font-size: 14px; color: #6b7280; }
+      .document-type-badge { display: inline-block; background: #1f2937; color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; font-family: 'Monaco', 'Consolas', monospace; letter-spacing: 1px; margin-left: 8px; }
+      .applicant-section { background: white; border-radius: 12px; padding: 24px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+      .section-title { font-size: 16px; font-weight: 600; color: #1f2937; margin-bottom: 16px; display: flex; align-items: center; }
+      .section-icon { margin-right: 8px; font-size: 18px; color: #3b82f6; }
+      .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+      .info-item { background: #f8fafc; padding: 16px; border-radius: 10px; border-left: 3px solid #3b82f6; }
+      .info-label { font-size: 12px; font-weight: 500; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+      .info-value { font-size: 14px; font-weight: 600; color: #1f2937; }
+      .submission-timeline { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 1px solid #10b981; border-radius: 12px; padding: 20px; margin: 20px 0; }
+      .timeline-item { display: flex; align-items: center; margin-bottom: 12px; }
+      .timeline-item:last-child { margin-bottom: 0; }
+      .timeline-dot { width: 12px; height: 12px; background: #10b981; border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
+      .timeline-content { font-size: 14px; color: #065f46; }
+      .timeline-time { font-weight: 600; margin-right: 8px; }
+      .action-section { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid #f59e0b; border-radius: 16px; padding: 30px; text-align: center; margin: 30px 0; }
+      .action-title { font-size: 20px; font-weight: 600; color: #92400e; margin-bottom: 12px; }
+      .action-description { font-size: 16px; color: #92400e; margin-bottom: 24px; line-height: 1.6; }
+      .review-button { display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); color: white; text-decoration: none; padding: 16px 32px; border-radius: 12px; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+      .review-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); }
+      .quick-actions { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+      .quick-btn { display: inline-block; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 500; font-size: 14px; transition: all 0.3s ease; text-align: center; min-width: 120px; }
+      .btn-approve { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); }
+      .btn-reject { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3); }
+      .btn-pending { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); }
+      .quick-btn:hover { transform: translateY(-1px); }
+      .security-notice { background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%); border: 1px solid #ef4444; border-radius: 12px; padding: 20px; margin: 30px 0; display: flex; align-items: flex-start; }
+      .security-icon { width: 24px; height: 24px; background: #ef4444; border-radius: 50%; margin-right: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold; }
+      .security-content h4 { font-size: 14px; font-weight: 600; color: #b91c1c; margin-bottom: 4px; }
+      .security-text { font-size: 14px; color: #b91c1c; line-height: 1.5; }
+      .checklist { background: #f9fafb; border-radius: 12px; padding: 24px; margin: 30px 0; }
+      .checklist-title { font-size: 16px; font-weight: 600; color: #1f2937; margin-bottom: 16px; display: flex; align-items: center; }
+      .checklist-items { list-style: none; padding: 0; }
+      .checklist-item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 14px; color: #4b5563; }
+      .checklist-item:last-child { margin-bottom: 0; }
+      .checklist-checkbox { width: 18px; height: 18px; border: 2px solid #d1d5db; border-radius: 4px; margin-right: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+      .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 20px 0; }
+      .stat-item { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); border-left: 3px solid #3b82f6; }
+      .stat-number { font-size: 24px; font-weight: 700; color: #3b82f6; margin-bottom: 4px; }
+      .stat-label { font-size: 12px; color: #6b7280; font-weight: 500; }
+      .footer { background: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb; }
+      .footer-admin { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-top: 1px solid #3b82f6; }
+      .footer-text { font-size: 14px; color: #6b7280; margin-bottom: 16px; }
+      .admin-footer-text { color: #1e40af; font-weight: 500; }
+      .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+      .footer-link { color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: 500; }
+      .footer-link:hover { text-decoration: underline; }
+      .copyright { font-size: 12px; color: #9ca3af; }
+      @media (max-width: 600px) { .email-container { margin: 0 10px; border-radius: 16px; } .content, .header, .footer { padding: 20px; } .info-grid { grid-template-columns: 1fr; } .quick-actions { flex-direction: column; align-items: center; } .quick-btn { width: 100%; max-width: 200px; } .stats-grid { grid-template-columns: repeat(2, 1fr); } .footer-links { flex-direction: column; gap: 12px; } .document-header { flex-direction: column; text-align: center; } .document-icon { margin: 0 0 12px 0; } }
+
+  body
+    .email-container
+      .header
+        .logo 📋
+        h1 Review Dokumen
+        p Admin Dashboard
+      
+      .content
+        .priority-badge 🔥 PRIORITAS TINGGI
+        
+        .admin-greeting
+          h2 Halo Admin,
+          p Ada dokumen baru yang memerlukan verifikasi dan persetujuan Anda.
+        
+        .document-card
+          .document-header
+            .document-icon 📄
+            .document-info
+              h3
+                | Dokumen Verifikasi
+                span.document-type-badge #{documentType}
+              p Diajukan untuk review dan persetujuan
+          
+          .applicant-section
+            .section-title
+              span.section-icon 👤
+              | Informasi Pemohon
+            .info-grid
+              .info-item
+                .info-label Nama Lengkap
+                .info-value #{applicantName}
+              .info-item
+                .info-label Email
+                .info-value #{applicantEmail}
+              .info-item
+                .info-label Jenis Dokumen
+                .info-value #{documentType}
+              .info-item
+                .info-label Tanggal Pengajuan
+                .info-value #{submissionDate}
+          
+          .submission-timeline
+            .section-title(style="margin-bottom: 16px;")
+              span.section-icon ⏰
+              | Timeline Pengajuan
+            .timeline-item
+              .timeline-dot
+              .timeline-content
+                span.timeline-time #{submissionDate}
+                | Dokumen diupload oleh pemohon
+            .timeline-item
+              .timeline-dot(style="background: #f59e0b;")
+              .timeline-content
+                span.timeline-time Sekarang
+                | Menunggu review dari admin
+            .timeline-item
+              .timeline-dot(style="background: #d1d5db;")
+              .timeline-content
+                span.timeline-time Pending
+                | Keputusan approval/rejection
+            
+            .stats-grid
+              .stat-item
+                .stat-number 1
+                .stat-label Dokumen Baru
+              .stat-item
+                .stat-number 0
+                .stat-label Hari Tertunda
+              .stat-item
+                .stat-number HIGH
+                .stat-label Prioritas
+              .stat-item
+                .stat-number #{documentType}
+                .stat-label Tipe Dokumen
+        
+        .action-section
+          h3.action-title 🎯 Action Required
+          p.action-description Silakan akses admin dashboard untuk melakukan review mendetail terhadap dokumen ini. 
+            | Pastikan untuk memeriksa kelengkapan dan keaslian dokumen sebelum memberikan keputusan.
+          
+          a.review-button(href=reviewUrl) 🔍 Buka Admin Dashboard
+          
+          .quick-actions
+            a.quick-btn.btn-approve(href=reviewUrl + '/approve') ✓ Quick Approve
+            a.quick-btn.btn-pending(href=reviewUrl + '/pending') ⏳ Set Pending
+            a.quick-btn.btn-reject(href=reviewUrl + '/reject') ✗ Quick Reject
+        
+        .checklist
+          .checklist-title
+            span.section-icon ✅
+            | Checklist Review Dokumen
+          ul.checklist-items
+            li.checklist-item
+              .checklist-checkbox ☐
+              | Periksa keaslian dan kejelasan dokumen
+            li.checklist-item
+              .checklist-checkbox ☐
+              | Validasi informasi pemohon sesuai data
+            li.checklist-item
+              .checklist-checkbox ☐
+              | Pastikan dokumen sesuai dengan persyaratan
+            li.checklist-item
+              .checklist-checkbox ☐
+              | Cek tanggal berlaku dan status dokumen
+            li.checklist-item
+              .checklist-checkbox ☐
+              | Berikan catatan jika diperlukan
+        
+        .security-notice
+          .security-icon 🔒
+          .security-content
+            h4 Keamanan & Privasi
+            .security-text
+              | Dokumen ini bersifat rahasia. Pastikan untuk mengikuti protokol keamanan dalam 
+              | proses review dan jangan membagikan informasi kepada pihak yang tidak berwenang.
+      
+      .footer.footer-admin
+        .footer-text.admin-footer-text Email notifikasi admin - Property Management System
+        .footer-links
+          a.footer-link(href="#") Admin Dashboard
+          a.footer-link(href="#") Document Center
+          a.footer-link(href="#") User Management
+          a.footer-link(href="#") System Settings
+        .copyright © #{year} Property Management Admin Panel. All rights reserved.

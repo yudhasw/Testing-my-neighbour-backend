@@ -79,10 +79,10 @@ let MailerManageController = class MailerManageController {
                 }
             }
             if (!result) {
-                throw new common_1.HttpException('Failed to send verification email', common_1.HttpStatus.BAD_REQUEST);
+                throw new common_1.HttpException('Gagal untuk mengirim email verifikasi', common_1.HttpStatus.BAD_REQUEST);
             }
             return {
-                message: 'Verification email sent successfully',
+                message: 'Email verifikasi berhasil dikirim',
                 verificationCode,
             };
         }
@@ -94,10 +94,10 @@ let MailerManageController = class MailerManageController {
         try {
             const result = await this.mailerManageService.sendFamilyMemberApprovalNotification(dto);
             if (!result) {
-                throw new common_1.HttpException('Failed to send approval notification', common_1.HttpStatus.BAD_REQUEST);
+                throw new common_1.HttpException('Gagal mengirim pemberitahuan persetujuan', common_1.HttpStatus.BAD_REQUEST);
             }
             return {
-                message: 'Approval notification sent successfully',
+                message: 'Pemberitahuan persetujuan berhasil dikirim',
             };
         }
         catch (error) {

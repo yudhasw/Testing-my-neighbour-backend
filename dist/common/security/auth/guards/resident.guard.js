@@ -10,6 +10,8 @@ exports.ResidentGuard = void 0;
 const common_1 = require("@nestjs/common");
 let ResidentGuard = class ResidentGuard {
     canActivate(context) {
+        const request = context.switchToHttp().getRequest();
+        return true;
     }
 };
 exports.ResidentGuard = ResidentGuard;

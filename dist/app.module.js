@@ -26,7 +26,6 @@ const announcement_manage_module_1 = require("./modules/communication-module/ann
 const forum_comment_manage_module_1 = require("./modules/communication-module/forum-comment-module/forum-comment-manage.module");
 const forum_post_manage_module_1 = require("./modules/communication-module/forum-post-module/forum-post-manage.module");
 const billing_manage_module_1 = require("./modules/financial-module/billing-module/billing-manage.module");
-const leases_manage_module_1 = require("./modules/financial-module/lease-module/leases-manage.module");
 const payments_manage_module_1 = require("./modules/financial-module/payments-module/payments-manage.module");
 const employee_manage_module_1 = require("./modules/user-manage-module/employee-module/employee-manage.module");
 const resident_manage_module_1 = require("./modules/user-manage-module/resident-module/resident-manage.module");
@@ -100,10 +99,6 @@ exports.AppModule = AppModule = __decorate([
                                 {
                                     path: 'billing',
                                     module: billing_manage_module_1.BillingManageModule,
-                                },
-                                {
-                                    path: 'lease',
-                                    module: leases_manage_module_1.LeasesManageModule,
                                 },
                             ],
                         },

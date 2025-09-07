@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
@@ -72,7 +73,6 @@ export class AuthService extends UploadsService {
           contactNumber: registRequest.contactNumber, // Fix: use contactNumber instead of phoneNumber
           dateOfBirth: registRequest.dateOfBirth,
           password: hashedPassword,
-          emailVerificationToken: verificationToken,
           role: registRequest.role,
           gender: registRequest.gender,
         },
@@ -83,9 +83,9 @@ export class AuthService extends UploadsService {
         userId: user.id,
         emergencyContactName: registRequest.emergencyContactName,
         emergencyContactNumber: registRequest.emergencyContactNumber,
-        movedInDate: new Date(),
-        residentStatus: registRequest.residentType, // Fix: use residentStatus not residentType
-        registrationStatus: 'PENDING', // Fix: use PENDING not PENDING_VERIFICATION
+        movedInDate: registRequest.movedInDate ?? new Date(),
+        residentStatus: registRequest.residentType,
+        registrationStatus: 'PENDING',
         registrationMethod: 'USER_DRIVEN',
         pendingApproval:
           registRequest.residentType === ResidentStatus.FAMILY_MEMBERS,

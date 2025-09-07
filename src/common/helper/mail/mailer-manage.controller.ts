@@ -37,7 +37,7 @@ export class SendDocumentReviewDto {
   applicantEmail: string;
   adminName: string;
   adminEmail: string;
-  documentType: 'AJB' | 'SHM' | 'KPR' | 'ID_CARD' | 'KTP' | 'KK';
+  documentType: 'AJB' | 'SHM' | 'KPR' | 'ID_CARD' | 'FAMILY_CARD';
   submissionDate: string;
   reviewUrl: string;
 }
@@ -87,13 +87,13 @@ export class MailerManageController {
 
       if (!result) {
         throw new HttpException(
-          'Failed to send verification email',
+          'Gagal untuk mengirim email verifikasi',
           HttpStatus.BAD_REQUEST,
         );
       }
 
       return {
-        message: 'Verification email sent successfully',
+        message: 'Email verifikasi berhasil dikirim',
         verificationCode, // Return for system use
       };
     } catch (error) {
@@ -114,13 +114,13 @@ export class MailerManageController {
 
       if (!result) {
         throw new HttpException(
-          'Failed to send approval notification',
+          'Gagal mengirim pemberitahuan persetujuan',
           HttpStatus.BAD_REQUEST,
         );
       }
 
       return {
-        message: 'Approval notification sent successfully',
+        message: 'Pemberitahuan persetujuan berhasil dikirim',
       };
     } catch (error) {
       throw new HttpException(

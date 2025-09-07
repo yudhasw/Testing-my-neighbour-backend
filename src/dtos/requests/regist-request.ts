@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { Transform, Type } from 'class-transformer';
 import {
   IsString,
@@ -16,7 +18,11 @@ import {
   IsArray,
   IsStrongPassword,
 } from 'class-validator';
-import { Gender, ResidentStatus, UserRole } from '../../common/database/generated/prisma';
+import {
+  Gender,
+  ResidentStatus,
+  UserRole,
+} from '../../common/database/generated/prisma';
 import { IsUnique } from '../../common/pipes/validators/is-unique-validators';
 
 export enum RegistrationMethod {

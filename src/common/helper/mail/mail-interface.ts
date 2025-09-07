@@ -33,7 +33,7 @@ export interface DocumentVerificationData {
   applicantEmail: string;
   adminName: string;
   adminEmail: string;
-  documentType: 'AJB' | 'SHM' | 'KPR' | 'ID_CARD' | 'KTP' | 'KK';
+  documentType: 'AJB' | 'SHM' | 'KPR' | 'ID_CARD' | 'FAMILY_CARD';
   submissionDate: string;
   reviewUrl: string;
 }

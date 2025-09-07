@@ -46,18 +46,7 @@ let AppUserManageService = class AppUserManageService {
     async findAll() {
         try {
             return await this.prisma.users.findMany({
-                select: {
-                    id: true,
-                    fullName: true,
-                    firstName: true,
-                    lastName: true,
-                    username: true,
-                    primaryEmail: true,
-                    secondaryEmail: true,
-                    role: true,
-                    gender: true,
-                    createdAt: true,
-                    updatedAt: true,
+                include: {
                     Employee: {
                         select: {
                             employeeNumberId: true,

@@ -17,7 +17,6 @@ import { AnnouncementManageModule } from './modules/communication-module/announc
 import { ForumCommentManageModule } from './modules/communication-module/forum-comment-module/forum-comment-manage.module';
 import { ForumPostManageModule } from './modules/communication-module/forum-post-module/forum-post-manage.module';
 import { BillingManageModule } from './modules/financial-module/billing-module/billing-manage.module';
-import { LeasesManageModule } from './modules/financial-module/lease-module/leases-manage.module';
 import { PaymentsManageModule } from './modules/financial-module/payments-module/payments-manage.module';
 import { EmployeeManageModule } from './modules/user-manage-module/employee-module/employee-manage.module';
 import { ResidentManageModule } from './modules/user-manage-module/resident-module/resident-manage.module';
@@ -88,10 +87,6 @@ import { HelperModule } from './common/helper/helper.module';
               {
                 path: 'billing',
                 module: BillingManageModule,
-              },
-              {
-                path: 'lease',
-                module: LeasesManageModule,
               },
             ],
           },

@@ -25,10 +25,11 @@ export declare class AuthController {
             fullName: string;
             resident: ({
                 unit: {
-                    unitNumber: string;
                     id: string;
                     createdAt: Date;
                     updatedAt: Date;
+                    status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
+                    unitNumber: string;
                     buildingName: string | null;
                     unitOwnership: string[];
                     floorNumber: number | null;
@@ -36,7 +37,6 @@ export declare class AuthController {
                     priceSale: number;
                     squareFootage: number | null;
                     location: string;
-                    status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
                 } | null;
             } & {
                 id: string;
@@ -49,6 +49,7 @@ export declare class AuthController {
                 movedOutDate: Date | null;
                 familyCode: string | null;
                 residentStatus: import("src/common/database/generated/prisma").$Enums.ResidentStatus | null;
+                unitId: string | null;
                 kprPaymentAmount: number | null;
                 kprDueDate: Date | null;
                 isKprPaid: boolean | null;
@@ -59,7 +60,6 @@ export declare class AuthController {
                 rejectionReason: string | null;
                 pendingApproval: boolean;
                 approvedByHeadOfHousehold: string | null;
-                unitId: string | null;
             }) | null;
         };
     }>;
@@ -79,10 +79,11 @@ export declare class AuthController {
         userId: ({
             Resident: ({
                 unit: {
-                    unitNumber: string;
                     id: string;
                     createdAt: Date;
                     updatedAt: Date;
+                    status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
+                    unitNumber: string;
                     buildingName: string | null;
                     unitOwnership: string[];
                     floorNumber: number | null;
@@ -90,7 +91,6 @@ export declare class AuthController {
                     priceSale: number;
                     squareFootage: number | null;
                     location: string;
-                    status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
                 } | null;
             } & {
                 id: string;
@@ -103,6 +103,7 @@ export declare class AuthController {
                 movedOutDate: Date | null;
                 familyCode: string | null;
                 residentStatus: import("src/common/database/generated/prisma").$Enums.ResidentStatus | null;
+                unitId: string | null;
                 kprPaymentAmount: number | null;
                 kprDueDate: Date | null;
                 isKprPaid: boolean | null;
@@ -113,11 +114,12 @@ export declare class AuthController {
                 rejectionReason: string | null;
                 pendingApproval: boolean;
                 approvedByHeadOfHousehold: string | null;
-                unitId: string | null;
             }) | null;
         } & {
-            fullName: string;
             id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            fullName: string;
             firstName: string;
             lastName: string;
             username: string;
@@ -131,8 +133,6 @@ export declare class AuthController {
             passwordResetToken: string | null;
             role: import("src/common/database/generated/prisma").$Enums.UserRole;
             gender: import("src/common/database/generated/prisma").$Enums.Gender | null;
-            createdAt: Date;
-            updatedAt: Date;
         }) | null;
     }>;
     getFamilyApprovals(req: expressRequest & {
@@ -142,8 +142,8 @@ export declare class AuthController {
         approvals: ({
             familyMember: {
                 user: {
-                    fullName: string;
                     id: string;
+                    fullName: string;
                     contactNumber: string | null;
                     primaryEmail: string;
                 };
@@ -158,6 +158,7 @@ export declare class AuthController {
                 movedOutDate: Date | null;
                 familyCode: string | null;
                 residentStatus: import("src/common/database/generated/prisma").$Enums.ResidentStatus | null;
+                unitId: string | null;
                 kprPaymentAmount: number | null;
                 kprDueDate: Date | null;
                 isKprPaid: boolean | null;
@@ -168,7 +169,6 @@ export declare class AuthController {
                 rejectionReason: string | null;
                 pendingApproval: boolean;
                 approvedByHeadOfHousehold: string | null;
-                unitId: string | null;
             };
         } & {
             id: string;

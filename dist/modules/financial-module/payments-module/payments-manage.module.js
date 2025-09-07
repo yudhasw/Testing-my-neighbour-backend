@@ -11,7 +11,6 @@ const common_1 = require("@nestjs/common");
 const payments_manage_service_1 = require("../payments-module/payments-manage.service");
 const payments_manage_controller_1 = require("./payments-manage.controller");
 const billing_manage_module_1 = require("../billing-module/billing-manage.module");
-const leases_manage_module_1 = require("../lease-module/leases-manage.module");
 const resident_manage_module_1 = require("../../user-manage-module/resident-module/resident-manage.module");
 const unit_manage_module_1 = require("../../unit-manage-module/unit-manage.module");
 const database_service_1 = require("../../../common/database/database.service");
@@ -25,7 +24,6 @@ exports.PaymentsManageModule = PaymentsManageModule = __decorate([
         imports: [
             database_module_1.DatabaseModule,
             billing_manage_module_1.BillingManageModule,
-            leases_manage_module_1.LeasesManageModule,
             resident_manage_module_1.ResidentManageModule,
             unit_manage_module_1.UnitManageModule,
         ],

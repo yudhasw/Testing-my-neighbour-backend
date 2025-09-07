@@ -11,19 +11,13 @@ const common_1 = require("@nestjs/common");
 const database_module_1 = require("../../common/database/database.module");
 const billing_manage_module_1 = require("./billing-module/billing-manage.module");
 const payments_manage_module_1 = require("./payments-module/payments-manage.module");
-const leases_manage_module_1 = require("./lease-module/leases-manage.module");
 let FinancialModule = class FinancialModule {
 };
 exports.FinancialModule = FinancialModule;
 exports.FinancialModule = FinancialModule = __decorate([
     (0, common_1.Module)({
-        imports: [
-            database_module_1.DatabaseModule,
-            billing_manage_module_1.BillingManageModule,
-            payments_manage_module_1.PaymentsManageModule,
-            leases_manage_module_1.LeasesManageModule,
-        ],
-        exports: [billing_manage_module_1.BillingManageModule, payments_manage_module_1.PaymentsManageModule, leases_manage_module_1.LeasesManageModule],
+        imports: [database_module_1.DatabaseModule, billing_manage_module_1.BillingManageModule, payments_manage_module_1.PaymentsManageModule],
+        exports: [billing_manage_module_1.BillingManageModule, payments_manage_module_1.PaymentsManageModule],
     })
 ], FinancialModule);
 //# sourceMappingURL=financial.module.js.map

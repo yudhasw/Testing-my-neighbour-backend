@@ -51,10 +51,11 @@ export declare class AuthService extends UploadsService {
             fullName: string;
             resident: ({
                 unit: {
-                    unitNumber: string;
                     id: string;
                     createdAt: Date;
                     updatedAt: Date;
+                    status: import("../../../common/database/generated/prisma").$Enums.UnitStatus;
+                    unitNumber: string;
                     buildingName: string | null;
                     unitOwnership: string[];
                     floorNumber: number | null;
@@ -62,7 +63,6 @@ export declare class AuthService extends UploadsService {
                     priceSale: number;
                     squareFootage: number | null;
                     location: string;
-                    status: import("../../../common/database/generated/prisma").$Enums.UnitStatus;
                 } | null;
             } & {
                 id: string;
@@ -75,6 +75,7 @@ export declare class AuthService extends UploadsService {
                 movedOutDate: Date | null;
                 familyCode: string | null;
                 residentStatus: import("../../../common/database/generated/prisma").$Enums.ResidentStatus | null;
+                unitId: string | null;
                 kprPaymentAmount: number | null;
                 kprDueDate: Date | null;
                 isKprPaid: boolean | null;
@@ -85,7 +86,6 @@ export declare class AuthService extends UploadsService {
                 rejectionReason: string | null;
                 pendingApproval: boolean;
                 approvedByHeadOfHousehold: string | null;
-                unitId: string | null;
             }) | null;
         };
     }>;

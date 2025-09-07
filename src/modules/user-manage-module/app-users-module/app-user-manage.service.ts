@@ -32,7 +32,6 @@ export class AppUserManageService {
         },
       });
     } catch (error) {
-      // Tangkap error untuk debugging
       console.error((error as Error).message);
       throw new InternalServerErrorException(
         'Terjadi Kesalahan Saat Membuat Data Pengguna Aplikasi',
@@ -43,20 +42,7 @@ export class AppUserManageService {
   async findAll() {
     try {
       return await this.prisma.users.findMany({
-        select: {
-          // Pilihan yang lebih baik daripada include dengan omit
-          id: true,
-          fullName: true,
-          firstName: true,
-          lastName: true,
-          username: true,
-          primaryEmail: true,
-          secondaryEmail: true,
-          role: true,
-          gender: true,
-          createdAt: true,
-          updatedAt: true,
-          // Relasi
+        include: {
           Employee: {
             select: {
               employeeNumberId: true,
@@ -107,8 +93,8 @@ export class AppUserManageService {
               Complaints: {
                 select: {
                   title: true,
-                  description: true, // Perbaiki 'desciption'
-                  submittedAt: true, // Ubah 'complaintSubmitted'
+                  description: true,
+                  submittedAt: true,
                   status: true,
                 },
               },

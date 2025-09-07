@@ -11,6 +11,14 @@
       {
         "include": "common/database/generated/prisma",
         "outDir": "dist/"
+      },
+      {
+        "include": "common/helper/mail/template",
+        "outDir": "dist/"
+      },
+      {
+        "include": "/common/uploads",
+        "outDir": "dist/"
       }
     ]
   },
