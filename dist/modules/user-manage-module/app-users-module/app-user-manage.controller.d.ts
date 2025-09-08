@@ -74,6 +74,12 @@ export declare class AppUserManageController {
             } | null;
         } | null;
         Employee: {
+            Complaints: {
+                status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
+                title: string;
+                description: string;
+                submittedAt: Date;
+            }[];
             employeeNumberId: string;
             hireDate: Date;
             employeePosition: import("src/common/database/generated/prisma").$Enums.EmployeeRole;
@@ -85,12 +91,6 @@ export declare class AppUserManageController {
                 content: string;
                 publishDate: Date;
                 expiryDate: Date | null;
-            }[];
-            Complaints: {
-                title: string;
-                description: string;
-                status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
-                submittedAt: Date;
             }[];
         } | null;
     } & {

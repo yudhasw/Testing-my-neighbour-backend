@@ -6,15 +6,15 @@ export declare class AnnouncementManageService extends UploadsService {
     private readonly prisma;
     constructor(prisma: DatabaseService);
     create(createRequest: CreateAnnouncementManageDto, files?: Express.Multer.File[]): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
         title: string;
+        employeeId: string;
         content: string;
         attachments: string[];
         publishDate: Date;
         expiryDate: Date | null;
-        employeeId: string;
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     findAll(): Promise<{
         attachments: string[];
@@ -36,14 +36,14 @@ export declare class AnnouncementManageService extends UploadsService {
             salary: number;
             bonus: number | null;
         };
-        title: string;
-        content: string;
-        publishDate: Date;
-        expiryDate: Date | null;
-        employeeId: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
+        title: string;
+        employeeId: string;
+        content: string;
+        publishDate: Date;
+        expiryDate: Date | null;
     }[]>;
     findOne(id: string): Promise<{
         attachments: string[];
@@ -65,36 +65,36 @@ export declare class AnnouncementManageService extends UploadsService {
             salary: number;
             bonus: number | null;
         };
-        title: string;
-        content: string;
-        publishDate: Date;
-        expiryDate: Date | null;
-        employeeId: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
+        title: string;
+        employeeId: string;
+        content: string;
+        publishDate: Date;
+        expiryDate: Date | null;
     }>;
     update(id: string, updateRequest: UpdateAnnouncementManageDto, files?: Express.Multer.File[]): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
         title: string;
+        employeeId: string;
         content: string;
         attachments: string[];
         publishDate: Date;
         expiryDate: Date | null;
-        employeeId: string;
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     remove(id: string): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
         title: string;
+        employeeId: string;
         content: string;
         attachments: string[];
         publishDate: Date;
         expiryDate: Date | null;
-        employeeId: string;
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
     }>;
     getAnnouncementFiles(id: string): Promise<{
         path: string;

@@ -26,9 +26,9 @@ export declare class AuthController {
             resident: ({
                 unit: {
                     id: string;
+                    status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
                     createdAt: Date;
                     updatedAt: Date;
-                    status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
                     unitNumber: string;
                     buildingName: string | null;
                     unitOwnership: string[];
@@ -80,9 +80,9 @@ export declare class AuthController {
             Resident: ({
                 unit: {
                     id: string;
+                    status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
                     createdAt: Date;
                     updatedAt: Date;
-                    status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
                     unitNumber: string;
                     buildingName: string | null;
                     unitOwnership: string[];
@@ -173,11 +173,13 @@ export declare class AuthController {
         } & {
             id: string;
             status: import("src/common/database/generated/prisma").$Enums.ApprovalStatus;
-            familyMemberId: string;
-            headOfHouseholdId: string;
             requestedAt: Date;
             respondedAt: Date | null;
             notes: string | null;
+            createdAt: Date;
+            updatedAt: Date;
+            familyMemberId: string;
+            headOfHouseholdId: string;
         })[];
     }>;
     approveFamily(approvalId: string, req: expressRequest & {
@@ -190,11 +192,13 @@ export declare class AuthController {
         approval: {
             id: string;
             status: import("src/common/database/generated/prisma").$Enums.ApprovalStatus;
-            familyMemberId: string;
-            headOfHouseholdId: string;
             requestedAt: Date;
             respondedAt: Date | null;
             notes: string | null;
+            createdAt: Date;
+            updatedAt: Date;
+            familyMemberId: string;
+            headOfHouseholdId: string;
         };
     }>;
     logout(req: expressRequest & {

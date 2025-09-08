@@ -22,9 +22,9 @@ export declare class JwtStrategyService extends JwtStrategyService_base {
         resident: ({
             unit: {
                 id: string;
+                status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
                 createdAt: Date;
                 updatedAt: Date;
-                status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
                 unitNumber: string;
                 buildingName: string | null;
                 unitOwnership: string[];

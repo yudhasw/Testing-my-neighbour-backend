@@ -10,13 +10,18 @@ exports.FamilyApprovalManageModule = void 0;
 const common_1 = require("@nestjs/common");
 const family_approval_manage_service_1 = require("./family-approval-manage.service");
 const family_approval_manage_controller_1 = require("./family-approval-manage.controller");
+const database_module_1 = require("../../../../common/database/database.module");
+const users_manage_module_1 = require("../../users-manage.module");
+const database_service_1 = require("../../../../common/database/database.service");
 let FamilyApprovalManageModule = class FamilyApprovalManageModule {
 };
 exports.FamilyApprovalManageModule = FamilyApprovalManageModule;
 exports.FamilyApprovalManageModule = FamilyApprovalManageModule = __decorate([
     (0, common_1.Module)({
+        imports: [database_module_1.DatabaseModule, users_manage_module_1.UsersManageModule],
         controllers: [family_approval_manage_controller_1.FamilyApprovalManageController],
-        providers: [family_approval_manage_service_1.FamilyApprovalManageService],
+        providers: [family_approval_manage_service_1.FamilyApprovalManageService, database_service_1.DatabaseService],
+        exports: [family_approval_manage_service_1.FamilyApprovalManageService],
     })
 ], FamilyApprovalManageModule);
 //# sourceMappingURL=family-approval-manage.module.js.map

@@ -195,6 +195,7 @@ model FamilyCodes {
   isActive        Boolean   @default(true) @map("aktif")
   maxMembers      Int       @default(10) @map("maksimal_anggota")
   createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamp()
+  updatedAt       DateTime  @updatedAt @map("updated_at") @db.Timestamp()
 
   @@map("tb_kode_keluarga")
 }
@@ -209,6 +210,8 @@ model FamilyApprovals {
   requestedAt       DateTime       @default(now()) @map("tanggal_permintaan") @db.Timestamp()
   respondedAt       DateTime?      @map("tanggal_respon") @db.Timestamp()
   notes             String?        @map("catatan")
+  createdAt         DateTime       @default(now()) @map("created_at") @db.Timestamp()
+  updatedAt         DateTime       @updatedAt @map("updated_at") @db.Timestamp()
 
   @@map("tb_persetujuan_keluarga")
 }
@@ -225,6 +228,8 @@ model ResidentDocuments {
   verifiedBy   String?      @map("diverifikasi_oleh") @db.Uuid
   verifiedAt   DateTime?    @map("tanggal_verifikasi") @db.Timestamp()
   isVerified   Boolean      @default(false) @map("terverifikasi")
+  createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamp()
+  updatedAt    DateTime     @updatedAt @map("updated_at") @db.Timestamp()
 
   @@map("tb_dokumen_penghuni")
 }

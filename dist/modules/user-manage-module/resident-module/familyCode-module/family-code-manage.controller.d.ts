@@ -4,9 +4,103 @@ import { UpdateFamilyCodeManageDto } from '../../../../dtos/requests/update/upda
 export declare class FamilyCodeManageController {
     private readonly familyCodeManageService;
     constructor(familyCodeManageService: FamilyCodeManageService);
-    create(createFamilyCodeManageDto: CreateFamilyCodeManageDto): string;
-    findAll(): string;
-    findOne(id: string): string;
-    update(id: string, updateFamilyCodeManageDto: UpdateFamilyCodeManageDto): string;
-    remove(id: string): string;
+    create(createFamilyCodeManageDto: CreateFamilyCodeManageDto): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        headOfHousehold: string;
+        unitId: string | null;
+        code: string;
+        isActive: boolean;
+        maxMembers: number;
+    }>;
+    findAll(): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        headOfHousehold: string;
+        unitId: string | null;
+        code: string;
+        isActive: boolean;
+        maxMembers: number;
+    }[]>;
+    findOne(id: string): Promise<{
+        unit: {
+            id: string;
+            status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
+            createdAt: Date;
+            updatedAt: Date;
+            unitNumber: string;
+            buildingName: string | null;
+            unitOwnership: string[];
+            floorNumber: number | null;
+            numberOfRooms: number | null;
+            priceSale: number;
+            squareFootage: number | null;
+            location: string;
+        } | null;
+        headResident: {
+            user: {
+                fullName: string;
+                firstName: string;
+                lastName: string;
+                username: string;
+                dateOfBirth: Date | null;
+                contactNumber: string | null;
+                primaryEmail: string;
+                gender: import("src/common/database/generated/prisma").$Enums.Gender | null;
+            };
+        } & {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            userId: string;
+            emergencyContactName: string | null;
+            emergencyContactNumber: string | null;
+            movedInDate: Date;
+            movedOutDate: Date | null;
+            familyCode: string | null;
+            residentStatus: import("src/common/database/generated/prisma").$Enums.ResidentStatus | null;
+            unitId: string | null;
+            kprPaymentAmount: number | null;
+            kprDueDate: Date | null;
+            isKprPaid: boolean | null;
+            registrationStatus: import("src/common/database/generated/prisma").$Enums.RegistrationStatus;
+            registrationMethod: import("src/common/database/generated/prisma").$Enums.RegistrationMethod;
+            approvedBy: string | null;
+            approvalDate: Date | null;
+            rejectionReason: string | null;
+            pendingApproval: boolean;
+            approvedByHeadOfHousehold: string | null;
+        };
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        headOfHousehold: string;
+        unitId: string | null;
+        code: string;
+        isActive: boolean;
+        maxMembers: number;
+    }>;
+    update(id: string, updateFamilyCodeManageDto: UpdateFamilyCodeManageDto): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        headOfHousehold: string;
+        unitId: string | null;
+        code: string;
+        isActive: boolean;
+        maxMembers: number;
+    }>;
+    remove(id: string): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        headOfHousehold: string;
+        unitId: string | null;
+        code: string;
+        isActive: boolean;
+        maxMembers: number;
+    }>;
 }

@@ -12,4 +12,7 @@ export type SchemaModels =
   | 'leases'
   | 'bills'
   | 'units'
-  | 'contacts';
+  | 'contacts'
+  | 'familyCodes'
+  | 'familyApprovals'
+  | 'residentDocuments';

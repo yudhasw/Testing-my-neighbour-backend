@@ -29,7 +29,7 @@ export class FamilyCodeManageController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.familyCodeManageService.findOne(+id);
+    return this.familyCodeManageService.findOne(id);
   }
 
   @Patch(':id')
@@ -37,11 +37,11 @@ export class FamilyCodeManageController {
     @Param('id') id: string,
     @Body() updateFamilyCodeManageDto: UpdateFamilyCodeManageDto,
   ) {
-    return this.familyCodeManageService.update(+id, updateFamilyCodeManageDto);
+    return this.familyCodeManageService.update(id, updateFamilyCodeManageDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.familyCodeManageService.remove(+id);
+    return this.familyCodeManageService.remove(id);
   }
 }

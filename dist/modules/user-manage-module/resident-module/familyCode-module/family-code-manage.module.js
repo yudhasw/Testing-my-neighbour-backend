@@ -10,13 +10,17 @@ exports.FamilyCodeManageModule = void 0;
 const common_1 = require("@nestjs/common");
 const family_code_manage_service_1 = require("./family-code-manage.service");
 const family_code_manage_controller_1 = require("./family-code-manage.controller");
+const database_module_1 = require("../../../../common/database/database.module");
+const database_service_1 = require("../../../../common/database/database.service");
 let FamilyCodeManageModule = class FamilyCodeManageModule {
 };
 exports.FamilyCodeManageModule = FamilyCodeManageModule;
 exports.FamilyCodeManageModule = FamilyCodeManageModule = __decorate([
     (0, common_1.Module)({
+        imports: [database_module_1.DatabaseModule],
         controllers: [family_code_manage_controller_1.FamilyCodeManageController],
-        providers: [family_code_manage_service_1.FamilyCodeManageService],
+        providers: [family_code_manage_service_1.FamilyCodeManageService, database_service_1.DatabaseService],
+        exports: [family_code_manage_service_1.FamilyCodeManageService],
     })
 ], FamilyCodeManageModule);
 //# sourceMappingURL=family-code-manage.module.js.map

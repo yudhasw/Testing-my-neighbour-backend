@@ -31,7 +31,7 @@ export class FamilyApprovalManageController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.familyApprovalManageService.findOne(+id);
+    return this.familyApprovalManageService.findOne(id);
   }
 
   @Patch(':id')
@@ -40,13 +40,13 @@ export class FamilyApprovalManageController {
     @Body() updateFamilyApprovalManageDto: UpdateFamilyApprovalManageDto,
   ) {
     return this.familyApprovalManageService.update(
-      +id,
+      id,
       updateFamilyApprovalManageDto,
     );
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.familyApprovalManageService.remove(+id);
+    return this.familyApprovalManageService.remove(id);
   }
 }

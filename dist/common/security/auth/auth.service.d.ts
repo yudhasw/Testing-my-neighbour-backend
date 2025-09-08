@@ -31,11 +31,13 @@ export declare class AuthService extends UploadsService {
         approval: {
             id: string;
             status: import("../../../common/database/generated/prisma").$Enums.ApprovalStatus;
-            familyMemberId: string;
-            headOfHouseholdId: string;
             requestedAt: Date;
             respondedAt: Date | null;
             notes: string | null;
+            createdAt: Date;
+            updatedAt: Date;
+            familyMemberId: string;
+            headOfHouseholdId: string;
         };
     }>;
     private ensureFamilyCode;
@@ -52,9 +54,9 @@ export declare class AuthService extends UploadsService {
             resident: ({
                 unit: {
                     id: string;
+                    status: import("../../../common/database/generated/prisma").$Enums.UnitStatus;
                     createdAt: Date;
                     updatedAt: Date;
-                    status: import("../../../common/database/generated/prisma").$Enums.UnitStatus;
                     unitNumber: string;
                     buildingName: string | null;
                     unitOwnership: string[];

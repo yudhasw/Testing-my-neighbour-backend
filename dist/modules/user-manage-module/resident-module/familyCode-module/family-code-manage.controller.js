@@ -29,13 +29,13 @@ let FamilyCodeManageController = class FamilyCodeManageController {
         return this.familyCodeManageService.findAll();
     }
     findOne(id) {
-        return this.familyCodeManageService.findOne(+id);
+        return this.familyCodeManageService.findOne(id);
     }
     update(id, updateFamilyCodeManageDto) {
-        return this.familyCodeManageService.update(+id, updateFamilyCodeManageDto);
+        return this.familyCodeManageService.update(id, updateFamilyCodeManageDto);
     }
     remove(id) {
-        return this.familyCodeManageService.remove(+id);
+        return this.familyCodeManageService.remove(id);
     }
 };
 exports.FamilyCodeManageController = FamilyCodeManageController;

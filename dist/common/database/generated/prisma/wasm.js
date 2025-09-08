@@ -171,7 +171,8 @@ exports.Prisma.FamilyCodesScalarFieldEnum = {
   unitId: 'unitId',
   isActive: 'isActive',
   maxMembers: 'maxMembers',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FamilyApprovalsScalarFieldEnum = {
@@ -181,7 +182,9 @@ exports.Prisma.FamilyApprovalsScalarFieldEnum = {
   status: 'status',
   requestedAt: 'requestedAt',
   respondedAt: 'respondedAt',
-  notes: 'notes'
+  notes: 'notes',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.ResidentDocumentsScalarFieldEnum = {
@@ -194,7 +197,9 @@ exports.Prisma.ResidentDocumentsScalarFieldEnum = {
   uploadedAt: 'uploadedAt',
   verifiedBy: 'verifiedBy',
   verifiedAt: 'verifiedAt',
-  isVerified: 'isVerified'
+  isVerified: 'isVerified',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.EmployeesScalarFieldEnum = {

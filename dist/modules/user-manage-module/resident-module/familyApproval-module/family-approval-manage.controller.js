@@ -29,13 +29,13 @@ let FamilyApprovalManageController = class FamilyApprovalManageController {
         return this.familyApprovalManageService.findAll();
     }
     findOne(id) {
-        return this.familyApprovalManageService.findOne(+id);
+        return this.familyApprovalManageService.findOne(id);
     }
     update(id, updateFamilyApprovalManageDto) {
-        return this.familyApprovalManageService.update(+id, updateFamilyApprovalManageDto);
+        return this.familyApprovalManageService.update(id, updateFamilyApprovalManageDto);
     }
     remove(id) {
-        return this.familyApprovalManageService.remove(+id);
+        return this.familyApprovalManageService.remove(id);
     }
 };
 exports.FamilyApprovalManageController = FamilyApprovalManageController;

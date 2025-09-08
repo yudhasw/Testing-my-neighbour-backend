@@ -5628,6 +5628,7 @@ export namespace Prisma {
     isActive: boolean | null
     maxMembers: number | null
     createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FamilyCodesMaxAggregateOutputType = {
@@ -5638,6 +5639,7 @@ export namespace Prisma {
     isActive: boolean | null
     maxMembers: number | null
     createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FamilyCodesCountAggregateOutputType = {
@@ -5648,6 +5650,7 @@ export namespace Prisma {
     isActive: number
     maxMembers: number
     createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -5668,6 +5671,7 @@ export namespace Prisma {
     isActive?: true
     maxMembers?: true
     createdAt?: true
+    updatedAt?: true
   }
 
   export type FamilyCodesMaxAggregateInputType = {
@@ -5678,6 +5682,7 @@ export namespace Prisma {
     isActive?: true
     maxMembers?: true
     createdAt?: true
+    updatedAt?: true
   }
 
   export type FamilyCodesCountAggregateInputType = {
@@ -5688,6 +5693,7 @@ export namespace Prisma {
     isActive?: true
     maxMembers?: true
     createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -5785,6 +5791,7 @@ export namespace Prisma {
     isActive: boolean
     maxMembers: number
     createdAt: Date
+    updatedAt: Date
     _count: FamilyCodesCountAggregateOutputType | null
     _avg: FamilyCodesAvgAggregateOutputType | null
     _sum: FamilyCodesSumAggregateOutputType | null
@@ -5814,6 +5821,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     headResident?: boolean | ResidentsDefaultArgs<ExtArgs>
     unit?: boolean | FamilyCodes$unitArgs<ExtArgs>
   }, ExtArgs["result"]["familyCodes"]>
@@ -5826,6 +5834,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     headResident?: boolean | ResidentsDefaultArgs<ExtArgs>
     unit?: boolean | FamilyCodes$unitArgs<ExtArgs>
   }, ExtArgs["result"]["familyCodes"]>
@@ -5838,6 +5847,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
     headResident?: boolean | ResidentsDefaultArgs<ExtArgs>
     unit?: boolean | FamilyCodes$unitArgs<ExtArgs>
   }, ExtArgs["result"]["familyCodes"]>
@@ -5850,9 +5860,10 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: boolean
     createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FamilyCodesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "headOfHousehold" | "unitId" | "isActive" | "maxMembers" | "createdAt", ExtArgs["result"]["familyCodes"]>
+  export type FamilyCodesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "headOfHousehold" | "unitId" | "isActive" | "maxMembers" | "createdAt" | "updatedAt", ExtArgs["result"]["familyCodes"]>
   export type FamilyCodesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     headResident?: boolean | ResidentsDefaultArgs<ExtArgs>
     unit?: boolean | FamilyCodes$unitArgs<ExtArgs>
@@ -5880,6 +5891,7 @@ export namespace Prisma {
       isActive: boolean
       maxMembers: number
       createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["familyCodes"]>
     composites: {}
   }
@@ -6312,6 +6324,7 @@ export namespace Prisma {
     readonly isActive: FieldRef<"FamilyCodes", 'Boolean'>
     readonly maxMembers: FieldRef<"FamilyCodes", 'Int'>
     readonly createdAt: FieldRef<"FamilyCodes", 'DateTime'>
+    readonly updatedAt: FieldRef<"FamilyCodes", 'DateTime'>
   }
     
 
@@ -6763,6 +6776,8 @@ export namespace Prisma {
     requestedAt: Date | null
     respondedAt: Date | null
     notes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FamilyApprovalsMaxAggregateOutputType = {
@@ -6773,6 +6788,8 @@ export namespace Prisma {
     requestedAt: Date | null
     respondedAt: Date | null
     notes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FamilyApprovalsCountAggregateOutputType = {
@@ -6783,6 +6800,8 @@ export namespace Prisma {
     requestedAt: number
     respondedAt: number
     notes: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -6795,6 +6814,8 @@ export namespace Prisma {
     requestedAt?: true
     respondedAt?: true
     notes?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FamilyApprovalsMaxAggregateInputType = {
@@ -6805,6 +6826,8 @@ export namespace Prisma {
     requestedAt?: true
     respondedAt?: true
     notes?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FamilyApprovalsCountAggregateInputType = {
@@ -6815,6 +6838,8 @@ export namespace Prisma {
     requestedAt?: true
     respondedAt?: true
     notes?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -6898,6 +6923,8 @@ export namespace Prisma {
     requestedAt: Date
     respondedAt: Date | null
     notes: string | null
+    createdAt: Date
+    updatedAt: Date
     _count: FamilyApprovalsCountAggregateOutputType | null
     _min: FamilyApprovalsMinAggregateOutputType | null
     _max: FamilyApprovalsMaxAggregateOutputType | null
@@ -6925,6 +6952,8 @@ export namespace Prisma {
     requestedAt?: boolean
     respondedAt?: boolean
     notes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     familyMember?: boolean | ResidentsDefaultArgs<ExtArgs>
     headOfHousehold?: boolean | ResidentsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["familyApprovals"]>
@@ -6937,6 +6966,8 @@ export namespace Prisma {
     requestedAt?: boolean
     respondedAt?: boolean
     notes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     familyMember?: boolean | ResidentsDefaultArgs<ExtArgs>
     headOfHousehold?: boolean | ResidentsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["familyApprovals"]>
@@ -6949,6 +6980,8 @@ export namespace Prisma {
     requestedAt?: boolean
     respondedAt?: boolean
     notes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     familyMember?: boolean | ResidentsDefaultArgs<ExtArgs>
     headOfHousehold?: boolean | ResidentsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["familyApprovals"]>
@@ -6961,9 +6994,11 @@ export namespace Prisma {
     requestedAt?: boolean
     respondedAt?: boolean
     notes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FamilyApprovalsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "familyMemberId" | "headOfHouseholdId" | "status" | "requestedAt" | "respondedAt" | "notes", ExtArgs["result"]["familyApprovals"]>
+  export type FamilyApprovalsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "familyMemberId" | "headOfHouseholdId" | "status" | "requestedAt" | "respondedAt" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["familyApprovals"]>
   export type FamilyApprovalsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     familyMember?: boolean | ResidentsDefaultArgs<ExtArgs>
     headOfHousehold?: boolean | ResidentsDefaultArgs<ExtArgs>
@@ -6991,6 +7026,8 @@ export namespace Prisma {
       requestedAt: Date
       respondedAt: Date | null
       notes: string | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["familyApprovals"]>
     composites: {}
   }
@@ -7423,6 +7460,8 @@ export namespace Prisma {
     readonly requestedAt: FieldRef<"FamilyApprovals", 'DateTime'>
     readonly respondedAt: FieldRef<"FamilyApprovals", 'DateTime'>
     readonly notes: FieldRef<"FamilyApprovals", 'String'>
+    readonly createdAt: FieldRef<"FamilyApprovals", 'DateTime'>
+    readonly updatedAt: FieldRef<"FamilyApprovals", 'DateTime'>
   }
     
 
@@ -7868,6 +7907,8 @@ export namespace Prisma {
     verifiedBy: string | null
     verifiedAt: Date | null
     isVerified: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type ResidentDocumentsMaxAggregateOutputType = {
@@ -7881,6 +7922,8 @@ export namespace Prisma {
     verifiedBy: string | null
     verifiedAt: Date | null
     isVerified: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type ResidentDocumentsCountAggregateOutputType = {
@@ -7894,6 +7937,8 @@ export namespace Prisma {
     verifiedBy: number
     verifiedAt: number
     isVerified: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -7917,6 +7962,8 @@ export namespace Prisma {
     verifiedBy?: true
     verifiedAt?: true
     isVerified?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type ResidentDocumentsMaxAggregateInputType = {
@@ -7930,6 +7977,8 @@ export namespace Prisma {
     verifiedBy?: true
     verifiedAt?: true
     isVerified?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type ResidentDocumentsCountAggregateInputType = {
@@ -7943,6 +7992,8 @@ export namespace Prisma {
     verifiedBy?: true
     verifiedAt?: true
     isVerified?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -8043,6 +8094,8 @@ export namespace Prisma {
     verifiedBy: string | null
     verifiedAt: Date | null
     isVerified: boolean
+    createdAt: Date
+    updatedAt: Date
     _count: ResidentDocumentsCountAggregateOutputType | null
     _avg: ResidentDocumentsAvgAggregateOutputType | null
     _sum: ResidentDocumentsSumAggregateOutputType | null
@@ -8075,6 +8128,8 @@ export namespace Prisma {
     verifiedBy?: boolean
     verifiedAt?: boolean
     isVerified?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     resident?: boolean | ResidentsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["residentDocuments"]>
 
@@ -8089,6 +8144,8 @@ export namespace Prisma {
     verifiedBy?: boolean
     verifiedAt?: boolean
     isVerified?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     resident?: boolean | ResidentsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["residentDocuments"]>
 
@@ -8103,6 +8160,8 @@ export namespace Prisma {
     verifiedBy?: boolean
     verifiedAt?: boolean
     isVerified?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     resident?: boolean | ResidentsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["residentDocuments"]>
 
@@ -8117,9 +8176,11 @@ export namespace Prisma {
     verifiedBy?: boolean
     verifiedAt?: boolean
     isVerified?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type ResidentDocumentsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "residentId" | "documentType" | "fileName" | "fileUrl" | "fileSize" | "uploadedAt" | "verifiedBy" | "verifiedAt" | "isVerified", ExtArgs["result"]["residentDocuments"]>
+  export type ResidentDocumentsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "residentId" | "documentType" | "fileName" | "fileUrl" | "fileSize" | "uploadedAt" | "verifiedBy" | "verifiedAt" | "isVerified" | "createdAt" | "updatedAt", ExtArgs["result"]["residentDocuments"]>
   export type ResidentDocumentsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     resident?: boolean | ResidentsDefaultArgs<ExtArgs>
   }
@@ -8146,6 +8207,8 @@ export namespace Prisma {
       verifiedBy: string | null
       verifiedAt: Date | null
       isVerified: boolean
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["residentDocuments"]>
     composites: {}
   }
@@ -8580,6 +8643,8 @@ export namespace Prisma {
     readonly verifiedBy: FieldRef<"ResidentDocuments", 'String'>
     readonly verifiedAt: FieldRef<"ResidentDocuments", 'DateTime'>
     readonly isVerified: FieldRef<"ResidentDocuments", 'Boolean'>
+    readonly createdAt: FieldRef<"ResidentDocuments", 'DateTime'>
+    readonly updatedAt: FieldRef<"ResidentDocuments", 'DateTime'>
   }
     
 
@@ -21895,7 +21960,8 @@ export namespace Prisma {
     unitId: 'unitId',
     isActive: 'isActive',
     maxMembers: 'maxMembers',
-    createdAt: 'createdAt'
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FamilyCodesScalarFieldEnum = (typeof FamilyCodesScalarFieldEnum)[keyof typeof FamilyCodesScalarFieldEnum]
@@ -21908,7 +21974,9 @@ export namespace Prisma {
     status: 'status',
     requestedAt: 'requestedAt',
     respondedAt: 'respondedAt',
-    notes: 'notes'
+    notes: 'notes',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FamilyApprovalsScalarFieldEnum = (typeof FamilyApprovalsScalarFieldEnum)[keyof typeof FamilyApprovalsScalarFieldEnum]
@@ -21924,7 +21992,9 @@ export namespace Prisma {
     uploadedAt: 'uploadedAt',
     verifiedBy: 'verifiedBy',
     verifiedAt: 'verifiedAt',
-    isVerified: 'isVerified'
+    isVerified: 'isVerified',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type ResidentDocumentsScalarFieldEnum = (typeof ResidentDocumentsScalarFieldEnum)[keyof typeof ResidentDocumentsScalarFieldEnum]
@@ -22709,6 +22779,7 @@ export namespace Prisma {
     isActive?: BoolFilter<"FamilyCodes"> | boolean
     maxMembers?: IntFilter<"FamilyCodes"> | number
     createdAt?: DateTimeFilter<"FamilyCodes"> | Date | string
+    updatedAt?: DateTimeFilter<"FamilyCodes"> | Date | string
     headResident?: XOR<ResidentsScalarRelationFilter, ResidentsWhereInput>
     unit?: XOR<UnitsNullableScalarRelationFilter, UnitsWhereInput> | null
   }
@@ -22721,6 +22792,7 @@ export namespace Prisma {
     isActive?: SortOrder
     maxMembers?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     headResident?: ResidentsOrderByWithRelationInput
     unit?: UnitsOrderByWithRelationInput
   }
@@ -22736,6 +22808,7 @@ export namespace Prisma {
     isActive?: BoolFilter<"FamilyCodes"> | boolean
     maxMembers?: IntFilter<"FamilyCodes"> | number
     createdAt?: DateTimeFilter<"FamilyCodes"> | Date | string
+    updatedAt?: DateTimeFilter<"FamilyCodes"> | Date | string
     headResident?: XOR<ResidentsScalarRelationFilter, ResidentsWhereInput>
     unit?: XOR<UnitsNullableScalarRelationFilter, UnitsWhereInput> | null
   }, "id" | "code">
@@ -22748,6 +22821,7 @@ export namespace Prisma {
     isActive?: SortOrder
     maxMembers?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FamilyCodesCountOrderByAggregateInput
     _avg?: FamilyCodesAvgOrderByAggregateInput
     _max?: FamilyCodesMaxOrderByAggregateInput
@@ -22766,6 +22840,7 @@ export namespace Prisma {
     isActive?: BoolWithAggregatesFilter<"FamilyCodes"> | boolean
     maxMembers?: IntWithAggregatesFilter<"FamilyCodes"> | number
     createdAt?: DateTimeWithAggregatesFilter<"FamilyCodes"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FamilyCodes"> | Date | string
   }
 
   export type FamilyApprovalsWhereInput = {
@@ -22779,6 +22854,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
     respondedAt?: DateTimeNullableFilter<"FamilyApprovals"> | Date | string | null
     notes?: StringNullableFilter<"FamilyApprovals"> | string | null
+    createdAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
+    updatedAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
     familyMember?: XOR<ResidentsScalarRelationFilter, ResidentsWhereInput>
     headOfHousehold?: XOR<ResidentsScalarRelationFilter, ResidentsWhereInput>
   }
@@ -22791,6 +22868,8 @@ export namespace Prisma {
     requestedAt?: SortOrder
     respondedAt?: SortOrderInput | SortOrder
     notes?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     familyMember?: ResidentsOrderByWithRelationInput
     headOfHousehold?: ResidentsOrderByWithRelationInput
   }
@@ -22806,6 +22885,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
     respondedAt?: DateTimeNullableFilter<"FamilyApprovals"> | Date | string | null
     notes?: StringNullableFilter<"FamilyApprovals"> | string | null
+    createdAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
+    updatedAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
     familyMember?: XOR<ResidentsScalarRelationFilter, ResidentsWhereInput>
     headOfHousehold?: XOR<ResidentsScalarRelationFilter, ResidentsWhereInput>
   }, "id">
@@ -22818,6 +22899,8 @@ export namespace Prisma {
     requestedAt?: SortOrder
     respondedAt?: SortOrderInput | SortOrder
     notes?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FamilyApprovalsCountOrderByAggregateInput
     _max?: FamilyApprovalsMaxOrderByAggregateInput
     _min?: FamilyApprovalsMinOrderByAggregateInput
@@ -22834,6 +22917,8 @@ export namespace Prisma {
     requestedAt?: DateTimeWithAggregatesFilter<"FamilyApprovals"> | Date | string
     respondedAt?: DateTimeNullableWithAggregatesFilter<"FamilyApprovals"> | Date | string | null
     notes?: StringNullableWithAggregatesFilter<"FamilyApprovals"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"FamilyApprovals"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FamilyApprovals"> | Date | string
   }
 
   export type ResidentDocumentsWhereInput = {
@@ -22850,6 +22935,8 @@ export namespace Prisma {
     verifiedBy?: UuidNullableFilter<"ResidentDocuments"> | string | null
     verifiedAt?: DateTimeNullableFilter<"ResidentDocuments"> | Date | string | null
     isVerified?: BoolFilter<"ResidentDocuments"> | boolean
+    createdAt?: DateTimeFilter<"ResidentDocuments"> | Date | string
+    updatedAt?: DateTimeFilter<"ResidentDocuments"> | Date | string
     resident?: XOR<ResidentsScalarRelationFilter, ResidentsWhereInput>
   }
 
@@ -22864,6 +22951,8 @@ export namespace Prisma {
     verifiedBy?: SortOrderInput | SortOrder
     verifiedAt?: SortOrderInput | SortOrder
     isVerified?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     resident?: ResidentsOrderByWithRelationInput
   }
 
@@ -22881,6 +22970,8 @@ export namespace Prisma {
     verifiedBy?: UuidNullableFilter<"ResidentDocuments"> | string | null
     verifiedAt?: DateTimeNullableFilter<"ResidentDocuments"> | Date | string | null
     isVerified?: BoolFilter<"ResidentDocuments"> | boolean
+    createdAt?: DateTimeFilter<"ResidentDocuments"> | Date | string
+    updatedAt?: DateTimeFilter<"ResidentDocuments"> | Date | string
     resident?: XOR<ResidentsScalarRelationFilter, ResidentsWhereInput>
   }, "id">
 
@@ -22895,6 +22986,8 @@ export namespace Prisma {
     verifiedBy?: SortOrderInput | SortOrder
     verifiedAt?: SortOrderInput | SortOrder
     isVerified?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: ResidentDocumentsCountOrderByAggregateInput
     _avg?: ResidentDocumentsAvgOrderByAggregateInput
     _max?: ResidentDocumentsMaxOrderByAggregateInput
@@ -22916,6 +23009,8 @@ export namespace Prisma {
     verifiedBy?: UuidNullableWithAggregatesFilter<"ResidentDocuments"> | string | null
     verifiedAt?: DateTimeNullableWithAggregatesFilter<"ResidentDocuments"> | Date | string | null
     isVerified?: BoolWithAggregatesFilter<"ResidentDocuments"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"ResidentDocuments"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ResidentDocuments"> | Date | string
   }
 
   export type EmployeesWhereInput = {
@@ -24167,6 +24262,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
     headResident: ResidentsCreateNestedOneWithoutFamilyCodesInput
     unit?: UnitsCreateNestedOneWithoutFamilyCodesInput
   }
@@ -24179,6 +24275,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyCodesUpdateInput = {
@@ -24187,6 +24284,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     headResident?: ResidentsUpdateOneRequiredWithoutFamilyCodesNestedInput
     unit?: UnitsUpdateOneWithoutFamilyCodesNestedInput
   }
@@ -24199,6 +24297,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyCodesCreateManyInput = {
@@ -24209,6 +24308,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyCodesUpdateManyMutationInput = {
@@ -24217,6 +24317,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyCodesUncheckedUpdateManyInput = {
@@ -24227,6 +24328,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyApprovalsCreateInput = {
@@ -24235,6 +24337,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     familyMember: ResidentsCreateNestedOneWithoutFamilyMemberApprovalsInput
     headOfHousehold: ResidentsCreateNestedOneWithoutFamilyApprovalsInput
   }
@@ -24247,6 +24351,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyApprovalsUpdateInput = {
@@ -24255,6 +24361,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     familyMember?: ResidentsUpdateOneRequiredWithoutFamilyMemberApprovalsNestedInput
     headOfHousehold?: ResidentsUpdateOneRequiredWithoutFamilyApprovalsNestedInput
   }
@@ -24267,6 +24375,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyApprovalsCreateManyInput = {
@@ -24277,6 +24387,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyApprovalsUpdateManyMutationInput = {
@@ -24285,6 +24397,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyApprovalsUncheckedUpdateManyInput = {
@@ -24295,6 +24409,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ResidentDocumentsCreateInput = {
@@ -24307,6 +24423,8 @@ export namespace Prisma {
     verifiedBy?: string | null
     verifiedAt?: Date | string | null
     isVerified?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
     resident: ResidentsCreateNestedOneWithoutResidentDocumentsInput
   }
 
@@ -24321,6 +24439,8 @@ export namespace Prisma {
     verifiedBy?: string | null
     verifiedAt?: Date | string | null
     isVerified?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ResidentDocumentsUpdateInput = {
@@ -24333,6 +24453,8 @@ export namespace Prisma {
     verifiedBy?: NullableStringFieldUpdateOperationsInput | string | null
     verifiedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     resident?: ResidentsUpdateOneRequiredWithoutResidentDocumentsNestedInput
   }
 
@@ -24347,6 +24469,8 @@ export namespace Prisma {
     verifiedBy?: NullableStringFieldUpdateOperationsInput | string | null
     verifiedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ResidentDocumentsCreateManyInput = {
@@ -24360,6 +24484,8 @@ export namespace Prisma {
     verifiedBy?: string | null
     verifiedAt?: Date | string | null
     isVerified?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ResidentDocumentsUpdateManyMutationInput = {
@@ -24372,6 +24498,8 @@ export namespace Prisma {
     verifiedBy?: NullableStringFieldUpdateOperationsInput | string | null
     verifiedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ResidentDocumentsUncheckedUpdateManyInput = {
@@ -24385,6 +24513,8 @@ export namespace Prisma {
     verifiedBy?: NullableStringFieldUpdateOperationsInput | string | null
     verifiedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EmployeesCreateInput = {
@@ -25933,6 +26063,7 @@ export namespace Prisma {
     isActive?: SortOrder
     maxMembers?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FamilyCodesAvgOrderByAggregateInput = {
@@ -25947,6 +26078,7 @@ export namespace Prisma {
     isActive?: SortOrder
     maxMembers?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FamilyCodesMinOrderByAggregateInput = {
@@ -25957,6 +26089,7 @@ export namespace Prisma {
     isActive?: SortOrder
     maxMembers?: SortOrder
     createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FamilyCodesSumOrderByAggregateInput = {
@@ -25994,6 +26127,8 @@ export namespace Prisma {
     requestedAt?: SortOrder
     respondedAt?: SortOrder
     notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FamilyApprovalsMaxOrderByAggregateInput = {
@@ -26004,6 +26139,8 @@ export namespace Prisma {
     requestedAt?: SortOrder
     respondedAt?: SortOrder
     notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FamilyApprovalsMinOrderByAggregateInput = {
@@ -26014,6 +26151,8 @@ export namespace Prisma {
     requestedAt?: SortOrder
     respondedAt?: SortOrder
     notes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type EnumApprovalStatusWithAggregatesFilter<$PrismaModel = never> = {
@@ -26044,6 +26183,8 @@ export namespace Prisma {
     verifiedBy?: SortOrder
     verifiedAt?: SortOrder
     isVerified?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ResidentDocumentsAvgOrderByAggregateInput = {
@@ -26061,6 +26202,8 @@ export namespace Prisma {
     verifiedBy?: SortOrder
     verifiedAt?: SortOrder
     isVerified?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ResidentDocumentsMinOrderByAggregateInput = {
@@ -26074,6 +26217,8 @@ export namespace Prisma {
     verifiedBy?: SortOrder
     verifiedAt?: SortOrder
     isVerified?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ResidentDocumentsSumOrderByAggregateInput = {
@@ -29356,6 +29501,8 @@ export namespace Prisma {
     verifiedBy?: string | null
     verifiedAt?: Date | string | null
     isVerified?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ResidentDocumentsUncheckedCreateWithoutResidentInput = {
@@ -29368,6 +29515,8 @@ export namespace Prisma {
     verifiedBy?: string | null
     verifiedAt?: Date | string | null
     isVerified?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ResidentDocumentsCreateOrConnectWithoutResidentInput = {
@@ -29386,6 +29535,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
     unit?: UnitsCreateNestedOneWithoutFamilyCodesInput
   }
 
@@ -29396,6 +29546,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyCodesCreateOrConnectWithoutHeadResidentInput = {
@@ -29414,6 +29565,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     headOfHousehold: ResidentsCreateNestedOneWithoutFamilyApprovalsInput
   }
 
@@ -29424,6 +29577,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyApprovalsCreateOrConnectWithoutFamilyMemberInput = {
@@ -29442,6 +29597,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     familyMember: ResidentsCreateNestedOneWithoutFamilyMemberApprovalsInput
   }
 
@@ -29452,6 +29609,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyApprovalsCreateOrConnectWithoutHeadOfHouseholdInput = {
@@ -29669,6 +29828,8 @@ export namespace Prisma {
     verifiedBy?: UuidNullableFilter<"ResidentDocuments"> | string | null
     verifiedAt?: DateTimeNullableFilter<"ResidentDocuments"> | Date | string | null
     isVerified?: BoolFilter<"ResidentDocuments"> | boolean
+    createdAt?: DateTimeFilter<"ResidentDocuments"> | Date | string
+    updatedAt?: DateTimeFilter<"ResidentDocuments"> | Date | string
   }
 
   export type FamilyCodesUpsertWithWhereUniqueWithoutHeadResidentInput = {
@@ -29698,6 +29859,7 @@ export namespace Prisma {
     isActive?: BoolFilter<"FamilyCodes"> | boolean
     maxMembers?: IntFilter<"FamilyCodes"> | number
     createdAt?: DateTimeFilter<"FamilyCodes"> | Date | string
+    updatedAt?: DateTimeFilter<"FamilyCodes"> | Date | string
   }
 
   export type FamilyApprovalsUpsertWithWhereUniqueWithoutFamilyMemberInput = {
@@ -29727,6 +29889,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
     respondedAt?: DateTimeNullableFilter<"FamilyApprovals"> | Date | string | null
     notes?: StringNullableFilter<"FamilyApprovals"> | string | null
+    createdAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
+    updatedAt?: DateTimeFilter<"FamilyApprovals"> | Date | string
   }
 
   export type FamilyApprovalsUpsertWithWhereUniqueWithoutHeadOfHouseholdInput = {
@@ -31773,6 +31937,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
     headResident: ResidentsCreateNestedOneWithoutFamilyCodesInput
   }
 
@@ -31783,6 +31948,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyCodesCreateOrConnectWithoutUnitInput = {
@@ -32705,6 +32871,8 @@ export namespace Prisma {
     verifiedBy?: string | null
     verifiedAt?: Date | string | null
     isVerified?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyCodesCreateManyHeadResidentInput = {
@@ -32714,6 +32882,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyApprovalsCreateManyFamilyMemberInput = {
@@ -32723,6 +32892,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FamilyApprovalsCreateManyHeadOfHouseholdInput = {
@@ -32732,6 +32903,8 @@ export namespace Prisma {
     requestedAt?: Date | string
     respondedAt?: Date | string | null
     notes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ComplaintsUpdateWithoutResidentInput = {
@@ -32831,6 +33004,8 @@ export namespace Prisma {
     verifiedBy?: NullableStringFieldUpdateOperationsInput | string | null
     verifiedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ResidentDocumentsUncheckedUpdateWithoutResidentInput = {
@@ -32843,6 +33018,8 @@ export namespace Prisma {
     verifiedBy?: NullableStringFieldUpdateOperationsInput | string | null
     verifiedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ResidentDocumentsUncheckedUpdateManyWithoutResidentInput = {
@@ -32855,6 +33032,8 @@ export namespace Prisma {
     verifiedBy?: NullableStringFieldUpdateOperationsInput | string | null
     verifiedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     isVerified?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyCodesUpdateWithoutHeadResidentInput = {
@@ -32863,6 +33042,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     unit?: UnitsUpdateOneWithoutFamilyCodesNestedInput
   }
 
@@ -32873,6 +33053,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyCodesUncheckedUpdateManyWithoutHeadResidentInput = {
@@ -32882,6 +33063,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyApprovalsUpdateWithoutFamilyMemberInput = {
@@ -32890,6 +33072,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     headOfHousehold?: ResidentsUpdateOneRequiredWithoutFamilyApprovalsNestedInput
   }
 
@@ -32900,6 +33084,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyApprovalsUncheckedUpdateManyWithoutFamilyMemberInput = {
@@ -32909,6 +33095,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyApprovalsUpdateWithoutHeadOfHouseholdInput = {
@@ -32917,6 +33105,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     familyMember?: ResidentsUpdateOneRequiredWithoutFamilyMemberApprovalsNestedInput
   }
 
@@ -32927,6 +33117,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyApprovalsUncheckedUpdateManyWithoutHeadOfHouseholdInput = {
@@ -32936,6 +33128,8 @@ export namespace Prisma {
     requestedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     respondedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type AnnouncementsCreateManyEmployeeInput = {
@@ -33353,6 +33547,7 @@ export namespace Prisma {
     isActive?: boolean
     maxMembers?: number
     createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ResidentsUpdateWithoutUnitInput = {
@@ -33564,6 +33759,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     headResident?: ResidentsUpdateOneRequiredWithoutFamilyCodesNestedInput
   }
 
@@ -33574,6 +33770,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FamilyCodesUncheckedUpdateManyWithoutUnitInput = {
@@ -33583,6 +33780,7 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     maxMembers?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type PaymentsCreateManyBillInput = {

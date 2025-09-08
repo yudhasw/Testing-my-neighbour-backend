@@ -5,60 +5,38 @@ export declare class ComplaintManageService {
     private readonly prisma;
     constructor(prisma: DatabaseService);
     create(createRequest: CreateComplaintManageDto): Promise<{
-        title: string;
-        employeeId: string | null;
-        images: string[];
         id: string;
+        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
         unitId: string | null;
+        residentId: string;
+        title: string;
         description: string;
         category: import("src/common/database/generated/prisma").$Enums.MaintenanceCategory;
-        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
+        images: string[];
         submittedAt: Date;
         resolvedAt: Date | null;
         resolutionDetails: string | null;
-        residentId: string;
+        employeeId: string | null;
     }>;
     findAll(): Promise<{
-        title: string;
-        employeeId: string | null;
-        images: string[];
         id: string;
+        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
         unitId: string | null;
+        residentId: string;
+        title: string;
         description: string;
         category: import("src/common/database/generated/prisma").$Enums.MaintenanceCategory;
-        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
+        images: string[];
         submittedAt: Date;
         resolvedAt: Date | null;
         resolutionDetails: string | null;
-        residentId: string;
+        employeeId: string | null;
     }[]>;
     findOne(id: string): Promise<{
-        employee: ({
-            employeeNumberId: string;
-            employeePosition: import("src/common/database/generated/prisma").$Enums.EmployeeRole;
-            user: {
-                id: string;
-                fullName: string;
-                firstName: string;
-                lastName: string;
-                username: string;
-            };
-        } & {
-            id: string;
-            createdAt: Date;
-            updatedAt: Date;
-            userId: string;
-            employeeNumberId: string;
-            hireDate: Date;
-            employeePosition: import("src/common/database/generated/prisma").$Enums.EmployeeRole;
-            workingHours: number;
-            salary: number;
-            bonus: number | null;
-        }) | null;
         resident: {
             user: {
                 id: string;
@@ -96,52 +74,74 @@ export declare class ComplaintManageService {
             pendingApproval: boolean;
             approvedByHeadOfHousehold: string | null;
         };
+        employee: ({
+            user: {
+                id: string;
+                fullName: string;
+                firstName: string;
+                lastName: string;
+                username: string;
+            };
+            employeeNumberId: string;
+            employeePosition: import("src/common/database/generated/prisma").$Enums.EmployeeRole;
+        } & {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            userId: string;
+            employeeNumberId: string;
+            hireDate: Date;
+            employeePosition: import("src/common/database/generated/prisma").$Enums.EmployeeRole;
+            workingHours: number;
+            salary: number;
+            bonus: number | null;
+        }) | null;
     } & {
-        title: string;
-        employeeId: string | null;
-        images: string[];
         id: string;
+        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
         unitId: string | null;
+        residentId: string;
+        title: string;
         description: string;
         category: import("src/common/database/generated/prisma").$Enums.MaintenanceCategory;
-        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
+        images: string[];
         submittedAt: Date;
         resolvedAt: Date | null;
         resolutionDetails: string | null;
-        residentId: string;
+        employeeId: string | null;
     }>;
     update(id: string, updateRequest: UpdateComplaintManageDto): Promise<{
-        title: string;
-        employeeId: string | null;
-        images: string[];
         id: string;
+        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
         unitId: string | null;
+        residentId: string;
+        title: string;
         description: string;
         category: import("src/common/database/generated/prisma").$Enums.MaintenanceCategory;
-        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
+        images: string[];
         submittedAt: Date;
         resolvedAt: Date | null;
         resolutionDetails: string | null;
-        residentId: string;
+        employeeId: string | null;
     }>;
     remove(id: string): Promise<{
-        title: string;
-        employeeId: string | null;
-        images: string[];
         id: string;
+        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
         createdAt: Date;
         updatedAt: Date;
         unitId: string | null;
+        residentId: string;
+        title: string;
         description: string;
         category: import("src/common/database/generated/prisma").$Enums.MaintenanceCategory;
-        status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
+        images: string[];
         submittedAt: Date;
         resolvedAt: Date | null;
         resolutionDetails: string | null;
-        residentId: string;
+        employeeId: string | null;
     }>;
 }
