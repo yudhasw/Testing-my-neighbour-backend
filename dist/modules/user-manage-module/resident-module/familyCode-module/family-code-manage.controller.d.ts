@@ -8,9 +8,9 @@ export declare class FamilyCodeManageController {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        headOfHousehold: string;
         unitId: string | null;
         code: string;
+        headOfHousehold: string;
         isActive: boolean;
         maxMembers: number;
     }>;
@@ -18,18 +18,18 @@ export declare class FamilyCodeManageController {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        headOfHousehold: string;
         unitId: string | null;
         code: string;
+        headOfHousehold: string;
         isActive: boolean;
         maxMembers: number;
     }[]>;
     findOne(id: string): Promise<{
         unit: {
             id: string;
-            status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
             createdAt: Date;
             updatedAt: Date;
+            status: import("src/common/database/generated/prisma").$Enums.UnitStatus;
             unitNumber: string;
             buildingName: string | null;
             unitOwnership: string[];
@@ -77,9 +77,9 @@ export declare class FamilyCodeManageController {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        headOfHousehold: string;
         unitId: string | null;
         code: string;
+        headOfHousehold: string;
         isActive: boolean;
         maxMembers: number;
     }>;
@@ -87,9 +87,9 @@ export declare class FamilyCodeManageController {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        headOfHousehold: string;
         unitId: string | null;
         code: string;
+        headOfHousehold: string;
         isActive: boolean;
         maxMembers: number;
     }>;
@@ -97,9 +97,9 @@ export declare class FamilyCodeManageController {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        headOfHousehold: string;
         unitId: string | null;
         code: string;
+        headOfHousehold: string;
         isActive: boolean;
         maxMembers: number;
     }>;

@@ -13,12 +13,14 @@ const resident_manage_controller_1 = require("./resident-manage.controller");
 const database_module_1 = require("../../../common/database/database.module");
 const database_service_1 = require("../../../common/database/database.service");
 const generalHelper_1 = require("../../../common/helper/generalHelper");
+const family_approval_manage_module_1 = require("./familyApproval-module/family-approval-manage.module");
+const family_code_manage_module_1 = require("./familyCode-module/family-code-manage.module");
 let ResidentManageModule = class ResidentManageModule {
 };
 exports.ResidentManageModule = ResidentManageModule;
 exports.ResidentManageModule = ResidentManageModule = __decorate([
     (0, common_1.Module)({
-        imports: [database_module_1.DatabaseModule],
+        imports: [database_module_1.DatabaseModule, family_approval_manage_module_1.FamilyApprovalManageModule, family_code_manage_module_1.FamilyCodeManageModule],
         controllers: [resident_manage_controller_1.ResidentManageController],
         providers: [resident_manage_service_1.ResidentManageService, database_service_1.DatabaseService, generalHelper_1.GeneralHelper],
         exports: [resident_manage_service_1.ResidentManageService],

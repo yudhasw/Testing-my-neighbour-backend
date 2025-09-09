@@ -1,0 +1,409 @@
+doctype html
+html(lang="id")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #fff;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 210mm;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        border-bottom: 3px solid #059669;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        padding: 30px 20px 20px;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 10px;
+      }
+
+      .header-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #64748b;
+      }
+
+      .section {
+        margin: 30px 0;
+        page-break-inside: avoid;
+      }
+
+      .section h2 {
+        font-size: 20px;
+        color: #1e293b;
+        border-left: 4px solid #059669;
+        padding-left: 15px;
+        margin-bottom: 20px;
+      }
+
+      .section h3 {
+        font-size: 16px;
+        color: #374151;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 5px;
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .summary-card {
+        padding: 25px 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+
+      .summary-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .summary-card.paid {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+      }
+
+      .summary-card.overdue {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: white;
+      }
+
+      .summary-card.pending {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+      }
+
+      .summary-card.collection-rate {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: white;
+      }
+
+      .amount {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .label {
+        font-size: 14px;
+        opacity: 0.9;
+        font-weight: 500;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      th {
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        color: #374151;
+        font-weight: 600;
+        padding: 15px 12px;
+        text-align: left;
+        border-bottom: 2px solid #e5e7eb;
+        font-size: 14px;
+      }
+
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 14px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+
+      tr:hover {
+        background-color: #f1f5f9;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .amount-cell {
+        font-weight: 600;
+        color: #059669;
+      }
+
+      .status-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      .status-paid {
+        background-color: #dcfce7;
+        color: #166534;
+      }
+
+      .status-pending {
+        background-color: #fef3c7;
+        color: #92400e;
+      }
+
+      .status-overdue {
+        background-color: #fee2e2;
+        color: #991b1b;
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e5e7eb;
+        text-align: center;
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      @media print {
+        body {
+          padding: 0;
+        }
+        
+        .header {
+          background: #f0fdf4 !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        
+        .summary-card {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        
+        .section {
+          page-break-inside: avoid;
+        }
+      }
+
+      .no-data {
+        text-align: center;
+        padding: 40px 20px;
+        color: #6b7280;
+        font-style: italic;
+      }
+
+      .highlight-row {
+        background-color: #fef3c7 !important;
+      }
+
+      .total-row {
+        font-weight: 600;
+        background-color: #f3f4f6 !important;
+        border-top: 2px solid #d1d5db;
+      }
+
+      .small-text {
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 8px;
+        background-color: #e5e7eb;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 8px;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+        transition: width 0.3s ease;
+      }
+
+  body
+    .container
+      .header
+        h1= title
+        .header-info
+          div
+            strong Periode:
+            |  #{period}
+          div
+            strong Dibuat pada:
+            |  #{generatedDate}
+
+      //- Ringkasan Keuangan
+      .section
+        h2 💰 Ringkasan Keuangan
+        .summary-grid
+          .summary-card.paid
+            .amount= totalPaid
+            .label Total Terbayar
+            .progress-bar
+              .progress-fill(style=`width: ${paidPercentage}%`)
+          .summary-card.overdue
+            .amount= totalOverdue
+            .label Total Tertunggak
+            .progress-bar
+              .progress-fill(style=`width: ${overduePercentage}%; background: #ef4444;`)
+          .summary-card.pending
+            .amount= totalPending
+            .label Total Pending
+          .summary-card.collection-rate
+            .amount= `${collectionRate}%`
+            .label Tingkat Kolektibilitas
+
+      //- Ringkasan Bulanan
+      .section
+        h2 📈 Ringkasan per Bulan
+        if monthlyPayments && monthlyPayments.length
+          table
+            thead
+              tr
+                th Bulan
+                th.text-center Jumlah Transaksi
+                th.text-right Total Pembayaran
+                th.text-center Rata-rata per Transaksi
+                th.text-center Tingkat Koleksi
+            tbody
+              each payment in monthlyPayments
+                tr
+                  td
+                    strong= payment.month
+                  td.text-center= payment.count
+                  td.text-right.amount-cell= payment.total
+                  td.text-center= payment.average
+                  td.text-center
+                    - var statusClass = payment.collectionRate >= 80 ? 'status-paid' : payment.collectionRate >= 60 ? 'status-pending' : 'status-overdue'
+                    span.status-badge(class=statusClass)= `${payment.collectionRate}%`
+              tr.total-row
+                td
+                  strong TOTAL
+                td.text-center
+                  strong= totalTransactions
+                td.text-right
+                  strong= grandTotal
+                td.text-center
+                  strong= overallAverage
+                td.text-center
+                  strong= `${overallCollectionRate}%`
+        else
+          .no-data Tidak ada data pembayaran bulanan pada periode ini
+
+      //- Riwayat Pembayaran Detail
+      .section
+        h2 📋 Riwayat Pembayaran Detail
+        if paymentHistory && paymentHistory.length
+          table
+            thead
+              tr
+                th Tanggal
+                th Penghuni
+                th Unit
+                th Tipe Tagihan
+                th.text-center Status
+                th.text-right Jumlah
+                th Metode Pembayaran
+            tbody
+              each payment in paymentHistory
+                tr(class=payment.isLatePayment ? 'highlight-row' : '')
+                  td= payment.date
+                  td= payment.residentName
+                  td.text-center= payment.unitNumber
+                  td= payment.billType
+                  td.text-center
+                    span.status-badge(class=`status-${payment.status}`)= payment.statusLabel
+                  td.text-right.amount-cell= payment.amount
+                  td= payment.paymentMethod
+          .small-text(style="margin-top: 10px;")
+            p * Baris dengan latar belakang kuning menunjukkan pembayaran terlambat
+            p Total #{paymentHistory.length} transaksi ditampilkan
+        else
+          .no-data Tidak ada riwayat pembayaran pada periode ini
+
+      .section
+        h2 📊 Analisis Pembayaran
+        
+        h3 Pembayaran per Tipe Tagihan
+        if paymentsByBillType && paymentsByBillType.length
+          table
+            thead
+              tr
+                th Tipe Tagihan
+                th.text-center Jumlah Transaksi
+                th.text-right Total Nilai
+                th.text-center Persentase
+            tbody
+              each billType in paymentsByBillType
+                tr
+                  td= billType.billType
+                  td.text-center= billType.count
+                  td.text-right.amount-cell= billType.total
+                  td.text-center= `${billType.percentage}%`
+        else
+          .no-data Tidak ada data pembayaran per tipe tagihan
+
+        h3 Metode Pembayaran
+        if paymentsByMethod && paymentsByMethod.length
+          table
+            thead
+              tr
+                th Metode Pembayaran
+                th.text-center Jumlah Transaksi
+                th.text-right Total Nilai
+                th.text-center Persentase
+            tbody
+              each method in paymentsByMethod
+                tr
+                  td= method.method
+                  td.text-center= method.count
+                  td.text-right.amount-cell= method.total
+                  td.text-center= `${method.percentage}%`
+        else
+          .no-data Tidak ada data metode pembayaran
+
+      .footer
+        p Laporan ini dibuat secara otomatis pada #{generatedDate}
+        p © 2025 Sistem Manajemen Apartemen - Laporan Keuangan
+        p.small-text Semua nilai dalam mata uang Rupiah (IDR)

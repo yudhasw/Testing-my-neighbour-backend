@@ -1,0 +1,165 @@
+doctype html
+html(lang="id")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{title}
+    style.
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #fff; padding: 20px; }
+      .container { max-width: 210mm; margin: 0 auto; }
+      .header { text-align: center; border-bottom: 3px solid #2563eb; padding-bottom: 20px; margin-bottom: 30px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 30px 20px 20px; border-radius: 8px 8px 0 0; }
+      .header h1 { font-size: 28px; font-weight: 700; color: #1e293b; margin-bottom: 10px; }
+      .header-info { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; font-size: 14px; color: #64748b; }
+      .section { margin: 30px 0; page-break-inside: avoid; }
+      .section h2 { font-size: 20px; color: #1e293b; border-left: 4px solid #2563eb; padding-left: 15px; margin-bottom: 20px; }
+      .section h3 { font-size: 16px; color: #374151; margin-bottom: 15px; border-bottom: 1px solid #e5e7eb; padding-bottom: 5px; }
+      .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+      .stat-card { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 25px 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s; }
+      .stat-card:hover { transform: translateY(-2px); }
+      .stat-number { font-size: 36px; font-weight: 700; margin-bottom: 8px; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+      .stat-label { font-size: 14px; opacity: 0.9; font-weight: 500; }
+      table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+      th { background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); color: #374151; font-weight: 600; padding: 15px 12px; text-align: left; border-bottom: 2px solid #e5e7eb; font-size: 14px; }
+      td { padding: 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+      tr:nth-child(even) { background-color: #f8fafc; }
+      tr:hover { background-color: #f1f5f9; }
+      .text-center { text-align: center; }
+      .text-right { text-align: right; }
+      .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; text-transform: uppercase; }
+      .badge-active { background-color: #dcfce7; color: #166534; }
+      .badge-inactive { background-color: #fee2e2; color: #991b1b; }
+      .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center; font-size: 12px; color: #6b7280; }
+      @media print { body { padding: 0; } .header { background: #f8fafc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; } .stat-card { background: #3b82f6 !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; } .section { page-break-inside: avoid; } }
+      .no-data { text-align: center; padding: 40px 20px; color: #6b7280; font-style: italic; }
+      .chart-placeholder { height: 200px; background: #f8fafc; border: 2px dashed #d1d5db; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #6b7280; font-style: italic; margin: 20px 0; }
+  body
+    .container
+      .header
+        h1 #{title}
+        .header-info
+          div
+            strong Periode:
+            |  #{period}
+          div
+            strong Dibuat pada:
+            |  #{generatedDate}
+
+      //- Ringkasan Utama
+      .section
+        h2 📊 Ringkasan Utama
+        .stats-grid
+          .stat-card
+            .stat-number #{totalComplaints}
+            .stat-label Total Keluhan
+          .stat-card
+            .stat-number #{totalSecurityReports}
+            .stat-label Laporan Keamanan
+          .stat-card
+            .stat-number #{totalResidents}
+            .stat-label Total Penghuni
+          .stat-card
+            .stat-number #{totalUnits}
+            .stat-label Total Unit
+
+      //- Statistik Keluhan
+      .section
+        h2 🎯 Statistik Keluhan
+        
+        h3 Keluhan per Kategori
+        if complaintsByCategory.length
+          table
+            thead
+              tr
+                th Kategori
+                th.text-center Jumlah
+                th.text-center Persentase
+            tbody
+              each complaint in complaintsByCategory
+                tr
+                  td= complaint.category
+                  td.text-center
+                    strong= complaint.count
+                  td.text-center #{complaint.percentage}%
+        else
+          .no-data Tidak ada data keluhan pada periode ini
+
+        h3 Status Keluhan
+        if complaintsByStatus.length
+          table
+            thead
+              tr
+                th Status
+                th.text-center Jumlah
+                th.text-center Persentase
+            tbody
+              each status in complaintsByStatus
+                tr
+                  td
+                    span.badge(class=`${status.status === 'COMPLETED' ? 'badge-active' : 'badge-inactive'}`)
+                      = status.status
+                  td.text-center
+                    strong= status.count
+                  td.text-center #{status.percentage}%
+        else
+          .no-data Tidak ada data status keluhan
+
+      //- Statistik Keamanan
+      .section
+        h2 🔐 Laporan Keamanan
+        
+        h3 Status Laporan Keamanan
+        if reportsByStatus.length
+          table
+            thead
+              tr
+                th Status
+                th.text-center Jumlah
+                th.text-center Persentase
+            tbody
+              each status in reportsByStatus
+                tr
+                  td
+                    span.badge(class=`${status.status === 'COMPLETED' ? 'badge-active' : 'badge-inactive'}`)
+                      = status.status
+                  td.text-center
+                    strong= status.count
+                  td.text-center #{status.percentage}%
+        else
+          .no-data Tidak ada data laporan keamanan
+
+      //- Statistik Unit dan Penghuni
+      .section
+        h2 🏠 Unit dan Penghuni
+        
+        h3 Status Unit
+        if unitsByStatus.length
+          table
+            thead
+              tr
+                th Status Unit
+                th.text-center Jumlah
+                th.text-center Persentase
+            tbody
+              each status in unitsByStatus
+                tr
+                  td
+                    span.badge(class=`${status.status === 'OCCUPIED' ? 'badge-active' : 'badge-inactive'}`)
+                      = status.status
+                  td.text-center
+                    strong= status.count
+                  td.text-center #{status.percentage}%
+        else
+          .no-data Tidak ada data status unit
+        
+        .stats-grid
+          .stat-card
+            .stat-number #{occupancyRate}%
+            .stat-label Tingkat Hunian
+          .stat-card
+            .stat-number #{averageComplaintsPerUnit}
+            .stat-label Rata-rata Keluhan per Unit
+
+      .footer
+        p Laporan ini dibuat secara otomatis pada #{generatedDate}
+        p © #{year} Sistem Manajemen Apartemen

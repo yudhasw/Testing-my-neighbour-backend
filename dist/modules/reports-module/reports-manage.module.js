@@ -9,13 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReportsManageModule = void 0;
 const common_1 = require("@nestjs/common");
 const database_module_1 = require("../../common/database/database.module");
-const payments_manage_module_1 = require("../financial-module/payments-module/payments-manage.module");
 const unit_manage_module_1 = require("../unit-manage-module/unit-manage.module");
 const users_manage_module_1 = require("../user-manage-module/users-manage.module");
 const security_manage_module_1 = require("../security-module/security-manage.module");
 const operational_report_module_1 = require("./operational-report-module/operational-report.module");
 const payments_report_module_1 = require("./payments-report-module/payments-report.module");
 const request_manage_module_1 = require("../request-module/request-manage.module");
+const communication_module_1 = require("../communication-module/communication.module");
+const contact_manage_module_1 = require("../contact-module/contact-manage.module");
+const financial_module_1 = require("../financial-module/financial.module");
 let ReportsManageModule = class ReportsManageModule {
 };
 exports.ReportsManageModule = ReportsManageModule;
@@ -23,15 +25,16 @@ exports.ReportsManageModule = ReportsManageModule = __decorate([
     (0, common_1.Module)({
         imports: [
             database_module_1.DatabaseModule,
-            payments_manage_module_1.PaymentsManageModule,
             unit_manage_module_1.UnitManageModule,
             request_manage_module_1.RequestManageModule,
             users_manage_module_1.UsersManageModule,
             security_manage_module_1.SecurityManageModule,
             operational_report_module_1.OperationalReportModule,
-            payments_report_module_1.PaymentsReportModule,
+            contact_manage_module_1.ContactManageModule,
+            communication_module_1.CommunicationModule,
+            financial_module_1.FinancialModule,
         ],
-        exports: [operational_report_module_1.OperationalReportModule, payments_manage_module_1.PaymentsManageModule],
+        exports: [operational_report_module_1.OperationalReportModule, payments_report_module_1.PaymentsReportModule],
     })
 ], ReportsManageModule);
 //# sourceMappingURL=reports-manage.module.js.map
