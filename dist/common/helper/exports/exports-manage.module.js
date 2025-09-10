@@ -9,14 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExportsManageModule = void 0;
 const common_1 = require("@nestjs/common");
 const exports_manage_service_1 = require("./exports-manage.service");
-const exports_manage_controller_1 = require("./exports-manage.controller");
+const reports_manage_module_1 = require("../../../modules/reports-module/reports-manage.module");
 let ExportsManageModule = class ExportsManageModule {
 };
 exports.ExportsManageModule = ExportsManageModule;
 exports.ExportsManageModule = ExportsManageModule = __decorate([
     (0, common_1.Module)({
-        controllers: [exports_manage_controller_1.ExportsManageController],
+        imports: [reports_manage_module_1.ReportsManageModule],
         providers: [exports_manage_service_1.ExportsManageService],
+        exports: [exports_manage_service_1.ExportsManageService],
     })
 ], ExportsManageModule);
 //# sourceMappingURL=exports-manage.module.js.map

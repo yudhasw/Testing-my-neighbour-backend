@@ -6,17 +6,17 @@ export declare class FamilyApprovalManageController {
     constructor(familyApprovalManageService: FamilyApprovalManageService);
     create(createFamilyApprovalManageDto: CreateFamilyApprovalManageDto): Promise<{
         id: string;
+        createdAt: Date;
+        updatedAt: Date;
         status: import("src/common/database/generated/prisma").$Enums.ApprovalStatus;
+        familyMemberId: string;
+        headOfHouseholdId: string;
         requestedAt: Date;
         respondedAt: Date | null;
         notes: string | null;
-        createdAt: Date;
-        updatedAt: Date;
-        familyMemberId: string;
-        headOfHouseholdId: string;
     }>;
     findAll(): Promise<({
-        familyMember: {
+        headOfHousehold: {
             user: {
                 fullName: string;
                 firstName: string;
@@ -50,7 +50,7 @@ export declare class FamilyApprovalManageController {
             pendingApproval: boolean;
             approvedByHeadOfHousehold: string | null;
         };
-        headOfHousehold: {
+        familyMember: {
             user: {
                 fullName: string;
                 firstName: string;
@@ -86,17 +86,17 @@ export declare class FamilyApprovalManageController {
         };
     } & {
         id: string;
+        createdAt: Date;
+        updatedAt: Date;
         status: import("src/common/database/generated/prisma").$Enums.ApprovalStatus;
+        familyMemberId: string;
+        headOfHouseholdId: string;
         requestedAt: Date;
         respondedAt: Date | null;
         notes: string | null;
-        createdAt: Date;
-        updatedAt: Date;
-        familyMemberId: string;
-        headOfHouseholdId: string;
     })[]>;
     findOne(id: string): Promise<{
-        familyMember: {
+        headOfHousehold: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -119,7 +119,7 @@ export declare class FamilyApprovalManageController {
             pendingApproval: boolean;
             approvedByHeadOfHousehold: string | null;
         };
-        headOfHousehold: {
+        familyMember: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -144,35 +144,35 @@ export declare class FamilyApprovalManageController {
         };
     } & {
         id: string;
+        createdAt: Date;
+        updatedAt: Date;
         status: import("src/common/database/generated/prisma").$Enums.ApprovalStatus;
+        familyMemberId: string;
+        headOfHouseholdId: string;
         requestedAt: Date;
         respondedAt: Date | null;
         notes: string | null;
-        createdAt: Date;
-        updatedAt: Date;
-        familyMemberId: string;
-        headOfHouseholdId: string;
     }>;
     update(id: string, updateFamilyApprovalManageDto: UpdateFamilyApprovalManageDto): Promise<{
         id: string;
+        createdAt: Date;
+        updatedAt: Date;
         status: import("src/common/database/generated/prisma").$Enums.ApprovalStatus;
+        familyMemberId: string;
+        headOfHouseholdId: string;
         requestedAt: Date;
         respondedAt: Date | null;
         notes: string | null;
-        createdAt: Date;
-        updatedAt: Date;
-        familyMemberId: string;
-        headOfHouseholdId: string;
     }>;
     remove(id: string): Promise<{
         id: string;
+        createdAt: Date;
+        updatedAt: Date;
         status: import("src/common/database/generated/prisma").$Enums.ApprovalStatus;
+        familyMemberId: string;
+        headOfHouseholdId: string;
         requestedAt: Date;
         respondedAt: Date | null;
         notes: string | null;
-        createdAt: Date;
-        updatedAt: Date;
-        familyMemberId: string;
-        headOfHouseholdId: string;
     }>;
 }

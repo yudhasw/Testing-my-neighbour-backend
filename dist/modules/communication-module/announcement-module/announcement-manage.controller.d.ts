@@ -5,15 +5,15 @@ export declare class AnnouncementManageController {
     private readonly announcementManageService;
     constructor(announcementManageService: AnnouncementManageService);
     create(createAnnouncementManageDto: CreateAnnouncementManageDto, files?: Express.Multer.File[]): Promise<{
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
         title: string;
-        employeeId: string;
         content: string;
         attachments: string[];
         publishDate: Date;
         expiryDate: Date | null;
+        employeeId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
     findAll(): Promise<{
         attachments: string[];
@@ -35,14 +35,14 @@ export declare class AnnouncementManageController {
             salary: number;
             bonus: number | null;
         };
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
         title: string;
-        employeeId: string;
         content: string;
         publishDate: Date;
         expiryDate: Date | null;
+        employeeId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
     }[]>;
     findOne(id: string): Promise<{
         attachments: string[];
@@ -64,35 +64,35 @@ export declare class AnnouncementManageController {
             salary: number;
             bonus: number | null;
         };
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
         title: string;
-        employeeId: string;
         content: string;
         publishDate: Date;
         expiryDate: Date | null;
+        employeeId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
     update(id: string, updateAnnouncementManageDto: UpdateAnnouncementManageDto, files?: Express.Multer.File[]): Promise<{
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
         title: string;
-        employeeId: string;
         content: string;
         attachments: string[];
         publishDate: Date;
         expiryDate: Date | null;
+        employeeId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
     remove(id: string): Promise<{
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
         title: string;
-        employeeId: string;
         content: string;
         attachments: string[];
         publishDate: Date;
         expiryDate: Date | null;
+        employeeId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
     }>;
 }

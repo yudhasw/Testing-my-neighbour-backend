@@ -29,10 +29,10 @@ export declare class EmployeeManageService {
             gender: import("src/common/database/generated/prisma").$Enums.Gender | null;
         };
         _count: {
-            Complaints: number;
-            Payments: number;
-            Bills: number;
             Announcements: number;
+            Complaints: number;
+            Bills: number;
+            Payments: number;
             SecurityReports: number;
         };
     } & {
@@ -57,21 +57,6 @@ export declare class EmployeeManageService {
             primaryEmail: string;
             gender: import("src/common/database/generated/prisma").$Enums.Gender | null;
         };
-        Complaints: {
-            status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
-            title: string;
-            description: string;
-            submittedAt: Date;
-            resolvedAt: Date | null;
-            resolutionDetails: string | null;
-        }[];
-        _count: {
-            Complaints: number;
-            Payments: number;
-            Bills: number;
-            Announcements: number;
-            SecurityReports: number;
-        };
         Announcements: {
             title: string;
             content: string;
@@ -79,6 +64,21 @@ export declare class EmployeeManageService {
             publishDate: Date;
             expiryDate: Date | null;
         }[];
+        Complaints: {
+            title: string;
+            description: string;
+            status: import("src/common/database/generated/prisma").$Enums.ComplaintStatus;
+            submittedAt: Date;
+            resolvedAt: Date | null;
+            resolutionDetails: string | null;
+        }[];
+        _count: {
+            Announcements: number;
+            Complaints: number;
+            Bills: number;
+            Payments: number;
+            SecurityReports: number;
+        };
     } & {
         id: string;
         createdAt: Date;
